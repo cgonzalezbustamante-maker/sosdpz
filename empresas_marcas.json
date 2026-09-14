@@ -1,0 +1,392 @@
+[
+ {
+  "nombre": "ALLIANCE HEALTHCARE ESPAÑA SA",
+  "municipio": "Villanueva de Gállego",
+  "ubicacion": "Pol. Ind. San Miguel, Sector IV, 50830",
+  "pos": 2
+ },
+ {
+  "nombre": "RIVASAM INTERCONTINENTAL SA",
+  "municipio": "Zuera",
+  "ubicacion": "Pol. Ind. El Campillo (matadero de porcino), 50800",
+  "pos": 3
+ },
+ {
+  "nombre": "SOCIEDAD ANONIMA INDUSTRIAS CELULOSA ARAGONESA (SAICA)",
+  "municipio": "El Burgo de Ebro",
+  "ubicacion": "Pol. El Espartal (fábricas SAICA-2 y SAICA-3); sede y SAICA-1 en La Cartuja, Zaragoza",
+  "pos": 5
+ },
+ {
+  "nombre": "ADIDAS ESPAÑA SAU",
+  "municipio": "Caspe",
+  "ubicacion": "Centro logístico Ctra. Alcañiz-Fraga s/n; sede admin. en PLAZA (Zaragoza)",
+  "pos": 6
+ },
+ {
+  "nombre": "CARNICAS CINCO VILLAS SA",
+  "municipio": "Ejea de los Caballeros",
+  "ubicacion": "Pol. Ind. Valdeferrín, 50600",
+  "pos": 7
+ },
+ {
+  "nombre": "ADIENT SEATING SPAIN SL",
+  "municipio": "Pedrola",
+  "ubicacion": "C/ General Motors 30, Pol. El Pradillo (planta JIT asientos), 50690",
+  "pos": 9
+ },
+ {
+  "nombre": "SAICA PACK SL",
+  "municipio": "El Burgo de Ebro",
+  "ubicacion": "Pol. El Espartal I, Ctra. Castellón km 21",
+  "pos": 14
+ },
+ {
+  "nombre": "SAICA NATUR SL",
+  "municipio": "El Burgo de Ebro",
+  "ubicacion": "Ctra. de Castellón km 21, Pol. El Espartal, 50730",
+  "pos": 21
+ },
+ {
+  "nombre": "HMY YUDIGAR EQUIPAMIENTO SLU",
+  "municipio": "Cariñena",
+  "ubicacion": "Pol. Veguilla s/n, 50400",
+  "pos": 22
+ },
+ {
+  "nombre": "INDUSTRIE CARTARIE TRONCHETTI IBERICA SLU",
+  "municipio": "El Burgo de Ebro",
+  "ubicacion": "Planta de tisú marca Foxy",
+  "pos": 23
+ },
+ {
+  "nombre": "S.C. GANADERA DE CASPE SL",
+  "municipio": "Caspe",
+  "ubicacion": "Caspe (fabricación de piensos)",
+  "pos": 26
+ },
+ {
+  "nombre": "PRIMACARNE SL",
+  "municipio": "Zuera",
+  "ubicacion": "Pol. Campillo, parc. 75, 50800",
+  "pos": 27
+ },
+ {
+  "nombre": "CASEN RECORDATI SL",
+  "municipio": "Utebo",
+  "ubicacion": "Planta/centro operativo en Utebo",
+  "pos": 30
+ },
+ {
+  "nombre": "YUDIGAR SL",
+  "municipio": "Cariñena",
+  "ubicacion": "Pol. Ind. La Veguilla s/n, 50400",
+  "pos": 31
+ },
+ {
+  "nombre": "ADIENT AUTOMOTIVE SL",
+  "municipio": "Alagón",
+  "ubicacion": "Carrera Caballos 53, 50630 (también Pedrola y Calatorao)",
+  "pos": 34
+ },
+ {
+  "nombre": "GRANJA BAILON SL",
+  "municipio": "La Almunia de Doña Godina",
+  "ubicacion": "Ctra. de Alpartir km 1,8, 50100",
+  "pos": 39
+ },
+ {
+  "nombre": "DELSO FERTILIZANTES GRUPO SL",
+  "municipio": "Calatayud",
+  "ubicacion": "Av. Pascual Marquina 12, 50300",
+  "pos": 44
+ },
+ {
+  "nombre": "LEAR CORPORATION ASIENTOS SL",
+  "municipio": "Épila",
+  "ubicacion": "Pol. Ind. Valdemuel, Camino Sabinar s/n, 50290",
+  "pos": 46
+ },
+ {
+  "nombre": "SMR AUTOMOTIVE SYSTEMS SPAIN SAU",
+  "municipio": "Épila",
+  "ubicacion": "Pol. Ind. Valdemuel, 50290 (retrovisores)",
+  "pos": 48
+ },
+ {
+  "nombre": "OMYA CLARIANA SLU",
+  "municipio": "Belchite",
+  "ubicacion": "Ctra. A-222 km 21,4, 50130 (carbonato cálcico y cantera)",
+  "pos": 51
+ },
+ {
+  "nombre": "COMERCIAL CHOCOLATES LACASA SA",
+  "municipio": "Utebo",
+  "ubicacion": "Autovía de Logroño 14, 50180 (fábrica de chocolates)",
+  "pos": 53
+ },
+ {
+  "nombre": "SUCESORES DE SIMON FRANCO SA",
+  "municipio": "Cuarte de Huerva",
+  "ubicacion": "Calle de la Constitución 30",
+  "pos": 64
+ },
+ {
+  "nombre": "SAT N 1733 GRANJA SAN MIGUEL",
+  "municipio": "Villarreal de Huerva",
+  "ubicacion": "Polígono Las Lomas s/n (avicultura)",
+  "pos": 70
+ },
+ {
+  "nombre": "PREFABRICADOS TECNYCONTA SLU",
+  "municipio": "Tauste",
+  "ubicacion": "Ctra. Gallur-Sangüesa km 11 s/n (prefabricados de hormigón)",
+  "pos": 72
+ },
+ {
+  "nombre": "COFERDROZA SCL",
+  "municipio": "Zuera",
+  "ubicacion": "Pol. Ind. Llanos de la Estación, C/ Isaac Peral 1 (centro logístico)",
+  "pos": 73
+ },
+ {
+  "nombre": "ADVANCED ACCELERATOR APPLICATIONS IBERICA SLU",
+  "municipio": "La Almunia de Doña Godina",
+  "ubicacion": "Pol. Ind. La Cuesta, Av. Navarra 3 (radiofármacos, Novartis)",
+  "pos": 74
+ },
+ {
+  "nombre": "INDUSTRIAL GANADERA PREMIER SA",
+  "municipio": "Bujaraloz",
+  "ubicacion": "Ctra. A-230 km 32,5 s/n (Premier Pigs, porcino)",
+  "pos": 76
+ },
+ {
+  "nombre": "GRUPOS ELECTROGENOS EUROPA SA",
+  "municipio": "Muel",
+  "ubicacion": "Pol. Ind. Pitarco II, parcela 20 (GESAN)",
+  "pos": 77
+ },
+ {
+  "nombre": "CAMPODULCE CURADOS SAU",
+  "municipio": "Zuera",
+  "ubicacion": "Pol. Ind. El Campillo 75 (secadero de jamones, Grupo Jorge)",
+  "pos": 78
+ },
+ {
+  "nombre": "SPHERE GROUP SPAIN SL",
+  "municipio": "Pedrola",
+  "ubicacion": "Pol. Ind. El Pradillo, C/ Aneto 5 (films plásticos)",
+  "pos": 80
+ },
+ {
+  "nombre": "VELPIRI SAU",
+  "municipio": "Zuera",
+  "ubicacion": "Pol. Ind. El Campillo (porcino, entorno Grupo Jorge)",
+  "pos": 83
+ },
+ {
+  "nombre": "COMERCIAL PRODUCTOS PORCINOS SECUNDARIOS SA",
+  "municipio": "Zuera",
+  "ubicacion": "Pol. Ind. El Campillo (tripería, Grupo Jorge)",
+  "pos": 84
+ },
+ {
+  "nombre": "GESTAMP ARAGON SA",
+  "municipio": "Pedrola",
+  "ubicacion": "Pol. El Pradillo, C/ General Motors 6 (componentes automoción)",
+  "pos": 86
+ },
+ {
+  "nombre": "LACASA SA",
+  "municipio": "Utebo",
+  "ubicacion": "Ctra. N-232 / A-68 km 14 (fábrica de chocolates)",
+  "pos": 94
+ },
+ {
+  "nombre": "GRANJA VIRGEN DEL ROSARIO SL",
+  "municipio": "Villarreal de Huerva",
+  "ubicacion": "C/ Arrabal s/n, 50490 (producción de huevos)",
+  "pos": 95
+ },
+ {
+  "nombre": "PASTAS ALIMENTICIAS ROMERO SA",
+  "municipio": "Daroca",
+  "ubicacion": "Avda. de Madrid 43 (fábrica de pastas)",
+  "pos": 103
+ },
+ {
+  "nombre": "IBERICA DE ALEACIONES LIGERAS SL",
+  "municipio": "Pradilla de Ebro",
+  "ubicacion": "Ctra. Tudela-Alagón A-126 km 42,5 (IDALSA, aluminio)",
+  "pos": 108
+ },
+ {
+  "nombre": "ADI HOGAR Y HOSTELERIA IBERIA SL",
+  "municipio": "Villanueva de Gállego",
+  "ubicacion": "C/ Río Piedra s/n, Pol. Ind. San Miguel, 50830",
+  "pos": 110
+ },
+ {
+  "nombre": "BUDENHEIM IBERICA SLU",
+  "municipio": "La Zaida",
+  "ubicacion": "Calle Extramuros s/n, 50784 (química inorgánica)",
+  "pos": 119
+ },
+ {
+  "nombre": "DR. SCHAR ESPAÑA SLU",
+  "municipio": "Alagón",
+  "ubicacion": "Pol. Ind. La Ciruela, Av. de Repol parc. 2, 50630 (fábrica sin gluten)",
+  "pos": 120
+ },
+ {
+  "nombre": "GESTAMP MANUFACTURING AUTOCHASIS SL",
+  "municipio": "Pedrola",
+  "ubicacion": "Pol. El Pradillo, C/ Aneto 5, 50690",
+  "pos": 131
+ },
+ {
+  "nombre": "GRUPO METALGRAFICO SA",
+  "municipio": "Sobradiel",
+  "ubicacion": "Ctra. de Logroño km 16, 50629",
+  "pos": 132
+ },
+ {
+  "nombre": "SAT VIDRIO",
+  "municipio": "Ricla",
+  "ubicacion": "Paraje Tejas Royas, 50270 (cerezas; SAT Red Fruits)",
+  "pos": 134
+ },
+ {
+  "nombre": "ARCELORMITTAL TAILORED BLANKS ZARAGOZA SL",
+  "municipio": "Pedrola",
+  "ubicacion": "Pol. El Pradillo II, C/ General Motors 7, 50690",
+  "pos": 135
+ },
+ {
+  "nombre": "ELECTRONICA CERLER SA",
+  "municipio": "La Muela",
+  "ubicacion": "Pol. Ind. Centrovía, Av. Los Ángeles 17, 50196",
+  "pos": 136
+ },
+ {
+  "nombre": "PROFESIONALES DE LA CARNE SL",
+  "municipio": "Villanueva de Gállego",
+  "ubicacion": "C/ Río Vero 1, 50830 (central)",
+  "pos": 137
+ },
+ {
+  "nombre": "TRENDICO GROUP SL",
+  "municipio": "Ejea de los Caballeros",
+  "ubicacion": "Paseo del Muro 60 bajos, 50600 (origen Twinner; oficina también en WTCZ Zaragoza)",
+  "pos": 138
+ },
+ {
+  "nombre": "EXPLOTACIONES BAJO ARAGON SL",
+  "municipio": "Caspe",
+  "ubicacion": "Partida Vuelta del Rey s/n, 50700 (porcino)",
+  "pos": 141
+ },
+ {
+  "nombre": "PROMA HISPANIA SA",
+  "municipio": "Épila",
+  "ubicacion": "Avenida Opel España, 50290 (componentes automoción)",
+  "pos": 142
+ },
+ {
+  "nombre": "JORGE PORK MEAT SLU",
+  "municipio": "Zuera",
+  "ubicacion": "Complejo cárnico de Grupo Jorge (matadero/despiece)",
+  "pos": 149
+ },
+ {
+  "nombre": "KDK-DONGKOOK AUTOMOTIVE SPAIN SA",
+  "municipio": "Borja",
+  "ubicacion": "Av. Campo de Borja 23, Pol. Ind. Barbalanca, 50540 (plásticos automoción)",
+  "pos": 153
+ },
+ {
+  "nombre": "ZALUX SA",
+  "municipio": "Alhama de Aragón",
+  "ubicacion": "Dos plantas (42.000 m²) en Alhama de Aragón; oficinas en Zaragoza (Grupo Trilux)",
+  "pos": 154
+ },
+ {
+  "nombre": "OPEL EUROPE HOLDINGS SL",
+  "municipio": "Figueruelas",
+  "ubicacion": "Pol. Entrerríos km 29 s/n, 50639 (planta Stellantis/Opel España)",
+  "pos": 157
+ },
+ {
+  "nombre": "IDE ELECTRIC SL",
+  "municipio": "Zuera",
+  "ubicacion": "C/ Leonardo da Vinci 2, Pol. Los Huertos, 50800 (envolventes eléctricas)",
+  "pos": 158
+ },
+ {
+  "nombre": "ITESAL SL",
+  "municipio": "Pina de Ebro",
+  "ubicacion": "Polígono Industrial (C/ G) s/n, 50750 (perfiles de aluminio)",
+  "pos": 159
+ },
+ {
+  "nombre": "CARVISA CONTAINER SL",
+  "municipio": "Remolinos",
+  "ubicacion": "Ctra. Alagón-Tudela km 44,9, Nave 2, 50637 (grupo Eurocontainer)",
+  "pos": 166
+ },
+ {
+  "nombre": "INTERLAZARO SL",
+  "municipio": "Calatayud",
+  "ubicacion": "Ctra. Madrid-Barcelona km 238,8, 50300",
+  "pos": 167
+ },
+ {
+  "nombre": "ADIEGO HERMANOS SA",
+  "municipio": "Cuarte de Huerva",
+  "ubicacion": "Ctra. de Valencia km 5,9, 50410 (también almacén en Cartuja Baja, Zaragoza)",
+  "pos": 169
+ },
+ {
+  "nombre": "ITALPANNELLI SA",
+  "municipio": "La Almunia de Doña Godina",
+  "ubicacion": "Pol. Ind. La Cuesta, 50100 (paneles sándwich)",
+  "pos": 171
+ },
+ {
+  "nombre": "TUBOS PERFILADOS SA",
+  "municipio": "El Burgo de Ebro",
+  "ubicacion": "Ctra. de Castellón km 15,5, Pol. La Noria, 50730",
+  "pos": 175
+ },
+ {
+  "nombre": "ARALOGIC SL",
+  "municipio": "Zuera",
+  "ubicacion": "Pol. Ind. El Campillo 75, 50800 (transporte de mercancías)",
+  "pos": 183
+ },
+ {
+  "nombre": "MONCAYO AGRICOLA SL",
+  "municipio": "Vera de Moncayo",
+  "ubicacion": "Calle Portaza s/n, 50580",
+  "pos": 187
+ },
+ {
+  "nombre": "GRUPO DELIFACTORY SL",
+  "municipio": "Utebo",
+  "ubicacion": "Ctra. de Logroño 92, 50180 (grupo SAMCA); domicilio social en Zaragoza",
+  "pos": 191
+ },
+ {
+  "nombre": "ÑAMING SLU",
+  "municipio": "Mallén",
+  "ubicacion": "C/ País Vasco 5, Pol. El Zafranar, 50550",
+  "pos": 193
+ },
+ {
+  "nombre": "CERTEST BIOTEC SL",
+  "municipio": "San Mateo de Gállego",
+  "ubicacion": "Pol. Ind. Río Gállego II, Calle J nº 1, 50840",
+  "pos": 200
+ }
+]

@@ -1,0 +1,201 @@
+﻿pos;nombre;cnae;facturacion;municipio;ubicacion;domicilio_fiscal;confianza;fuente
+1;BSH ELECTRODOMESTICOS ESPAÑA SA;2751;1.592.924.000;Zaragoza;Plantas de La Cartuja (Las Fuentes) y Montañana (centro mundial de inducción), término municipal de Zaragoza;;alta;enjoyzaragoza.es
+2;ALLIANCE HEALTHCARE ESPAÑA SA;4646;1.472.286.000;Villanueva de Gállego;Pol. Ind. San Miguel, Sector IV, 50830;;alta;empresite
+3;RIVASAM INTERCONTINENTAL SA;4632;1.280.659.180;Zuera;Pol. Ind. El Campillo (matadero de porcino), 50800;;alta;empresite
+4;ESPRINET IBERICA SLU;4650;1.252.334.000;Zaragoza;Plataforma Logística PLAZA, C/ Osca 2, 50197;;alta;plazalogistica
+5;SOCIEDAD ANONIMA INDUSTRIAS CELULOSA ARAGONESA (SAICA);1712;1.081.338.609;El Burgo de Ebro;"Pol. El Espartal (fábricas SAICA-2 y SAICA-3); sede y SAICA-1 en La Cartuja, Zaragoza";Zaragoza;alta;paper-world
+6;ADIDAS ESPAÑA SAU;4642;682.195.806;Caspe;"Centro logístico Ctra. Alcañiz-Fraga s/n; sede admin. en PLAZA (Zaragoza)";Zaragoza;alta;paginasamarillas
+7;CARNICAS CINCO VILLAS SA;0146;674.240.359;Ejea de los Caballeros;Pol. Ind. Valdeferrín, 50600;;alta;paginasamarillas
+8;FUJIKURA AUTOMOTIVE EUROPE SAU;4650;499.155.845;Zaragoza;Sede Avda. de Ranillas 3, Ed. Dinamiza (plantas de producción en Rumanía/Marruecos);;alta;kompass
+9;ADIENT SEATING SPAIN SL;2932;485.075.436;Pedrola;C/ General Motors 30, Pol. El Pradillo (planta JIT asientos), 50690;;alta;iberinform
+10;CUARTE SL;0146;400.006.180;Zaragoza;Ctra. de Logroño km 9,2, Monzalbarba (Zaragoza);Zaragoza;media;iberinform
+11;TRANS SESE SL;4941;387.445.978;Zaragoza;"Plataforma Logística PLAZA; complejo Grupo Sesé";;alta;empresite
+12;NOVALTIA S.COOP.;4646;corporativa;Zaragoza;Ctra. Autovía de Huesca s/n, 50015 (almacén);;alta;einforma
+13;SCHINDLER SA;2822;351.465.000;Zaragoza;Pol. Empresarium, Cartuja Baja, C/ Albardín 58;San Sebastián de los Reyes (Madrid);media;empresite
+14;SAICA PACK SL;1721;317.617.178;El Burgo de Ebro;Pol. El Espartal I, Ctra. Castellón km 21;Zaragoza;media;papeleriahada
+15;CARRERAS GRUPO LOGISTICO SA;4941;311.177.713;Zaragoza;Plataforma Logística PLAZA, C/ Messina 2;;alta;grupocarreras
+16;MEGASIDER ZARAGOZA SA;2410;corporativa;Zaragoza;Pol. José López Soriano, La Cartuja (acería grupo Megasa);;alta;iberinform
+17;AMPLIFON IBERICA SAU;4774;295.322.000;Zaragoza;"C/ Poetisa María Zambrano 31, WTCZ (sede; cadena de audífonos)";Zaragoza;media;einforma
+18;LECITRAILER SA;2920;295.133.547;Zaragoza;Camino de Los Huertos s/n, Casetas (planta de semirremolques);;alta;lecitrailer
+19;ARGAL ALIMENTACION SA;1013;corporativa;Zaragoza;C/ Mosén Domingo Agudo 11, 50015 (grupo con centros también fuera de la provincia);Zaragoza;media;iberinform
+20;PROFAND ZARAGOZA SL;4632;285.094.605;Zaragoza;C/ Bari 3, zona Mercazaragoza/Malpica (antigua Caladero);;alta;iberinform
+21;SAICA NATUR SL;3821;273.169.358;El Burgo de Ebro;Ctra. de Castellón km 21, Pol. El Espartal, 50730;;alta;gestoresderesiduos
+22;HMY YUDIGAR EQUIPAMIENTO SLU;4690;269.987.384;Cariñena;Pol. Veguilla s/n, 50400;;alta;empresite
+23;INDUSTRIE CARTARIE TRONCHETTI IBERICA SLU;1712;265.443.811;El Burgo de Ebro;Planta de tisú marca Foxy;;alta;empresite
+24;VIAN AS AUTOMOBILE SL;4781;corporativa;Zaragoza;Ctra. Autovía de Logroño (Casetas) 28 / P.I. Molino del Pilar;;alta;empresite
+25;NOVAPET SA;2016;232.696.720;FUERA;"Planta principal en Barbastro (Huesca); oficina en Zaragoza";Zaragoza;alta;empresite
+26;S.C. GANADERA DE CASPE SL;1091;corporativa;Caspe;Caspe (fabricación de piensos);;alta;ranking-empresas
+27;PRIMACARNE SL;1013;corporativa;Zuera;Pol. Campillo, parc. 75, 50800;;alta;iberinform
+28;ARAGOCIAS SA;8299;216.427.409;Zaragoza;C/ San Juan de la Peña 144;;media;einforma
+29;DANIEL AGUILO PANISELLO SA;1721;209.570.034;Zaragoza;"C/ San Juan de la Peña 144 (grupo SAICA; planta DAPSA en L'Aldea, Tarragona)";;media;iberinform
+30;CASEN RECORDATI SL;4646;corporativa;Utebo;Planta/centro operativo en Utebo;Madrid;alta;casenrecordati
+31;YUDIGAR SL;3100;197.299.854;Cariñena;Pol. Ind. La Veguilla s/n, 50400;;alta;empresite
+32;PROCLINIC SAU;4646;corporativa;Zaragoza;C/ Palermo 9, PLAZA (centro logístico);;alta;proclinic
+33;IBERCAJA GESTION SGIIC SA;6630;193.435.543;Zaragoza;Paseo Constitución 4, 50008;;alta;empresite
+34;ADIENT AUTOMOTIVE SL;2932;corporativa;Alagón;Carrera Caballos 53, 50630 (también Pedrola y Calatorao);;alta;empresite
+35;TEREOS STARCH & SWEETENERS IBERIA SAU;1062;180.745.665;Zaragoza;Avda. Salvador Allende 76-78, 50015 (antigua Campo Ebro/Syral);;alta;empresite
+36;BEBINTER SA;4634;178.107.683;Zaragoza;Ctra. de Castellón km 4,3 (zona Malpica);;alta;empresite
+37;AVES NOBLES Y DERIVADOS SL;1013;corporativa;Zaragoza;Plataforma Logística PLAZA;;media;iberinform
+38;EIGO GESTION DE OBRAS SL;4101;175.524.726;Zaragoza;C/ Bari 31, Ed. Technocenter, PLAZA;;alta;iberinform
+39;GRANJA BAILON SL;0147;173.402.897;La Almunia de Doña Godina;Ctra. de Alpartir km 1,8, 50100;;alta;paginasamarillas
+40;PIKOLIN SL;3100;168.192.591;Zaragoza;Centro logístico-industrial PLAZA;;alta;wikipedia
+41;MANN-HUMMEL IBERICA SA;2932;corporativa;Zaragoza;Pol. PLAZA, C/ Pertusa 8, 50197;;alta;iberinform
+42;SALTOKI LOGISTICA ZARAGOZA SA;4683;corporativa;Zaragoza;Pol. Cogullada, Av. Alcalde Francisco Caballero 16;;alta;iberinform
+43;SOLITIUM SL;4650;corporativa;Zaragoza;Pol. PLAZA, C/ Bari 39, 50197;;alta;paginasamarillas
+44;DELSO FERTILIZANTES GRUPO SL;4685;corporativa;Calatayud;Av. Pascual Marquina 12, 50300;;alta;dnb
+45;MOWI IBERIA SL;4632;corporativa;Zaragoza;Mercazaragoza, Ctra. Cogullada, 50014 (envasado de pescado);;alta;infonif
+46;LEAR CORPORATION ASIENTOS SL;2932;corporativa;Épila;Pol. Ind. Valdemuel, Camino Sabinar s/n, 50290;;alta;paginasamarillas
+47;ARAGONESA DE PIENSOS SAU;1091;corporativa;Zaragoza;Ctra. de Logroño km 9,2 - Monzalbarba, 50011;;alta;einforma
+48;SMR AUTOMOTIVE SYSTEMS SPAIN SAU;2932;corporativa;Épila;Pol. Ind. Valdemuel, 50290 (retrovisores);;alta;iberinform
+49;INDUSTRIAS QUIMICAS DEL EBRO SA;2013;135.475.745;Zaragoza;Pol. Ind. Malpica, Calle D nº 97;;alta;iberinform
+50;AGREDA AUTOMOVIL SA;4781;corporativa;Zaragoza;Av. Manuel Rodríguez Ayuso 110 (Ctra. de Madrid km 315,7), 50012;;alta;iberinform
+51;OMYA CLARIANA SLU;0811;134.624.000;Belchite;Ctra. A-222 km 21,4, 50130 (carbonato cálcico y cantera);;alta;einforma
+52;CABLES RCT SA;2732;132.641.545;Zaragoza;La Cartuja Baja, Pol. Prydes, Ctra. Castellón A-68 km 226,9, 50720;;alta;paginasamarillas
+53;COMERCIAL CHOCOLATES LACASA SA;4636;132.422.978;Utebo;Autovía de Logroño 14, 50180 (fábrica de chocolates);;alta;iberinform
+54;FERTINAGRO AGROVIP SL;4685;corporativa;Zaragoza;Ctra. Madrid km 315, C.E. Miralbueno, 50012;;media;iberinform
+55;DISTRIBUCIONES AGROPECUARIAS DE ARAGON SL;4621;corporativa;Zaragoza;Casetas (barrio de Zaragoza), 50620;;media;qdq
+56;FARMHISPANIA SA;2110;corporativa;Zaragoza;Pol. Ind. Malpica II, Calle J parc. 3 (planta cGMP de APIs);;alta;farmhispaniagroup
+57;VITALIA HOME SL;8731;117.012.224;Zaragoza;"C/ Joaquín Costa 2, 50001 (sede; residencias de mayores)";;alta;iberinform
+58;BRASS & FITTINGS SL;4683;corporativa;Zaragoza;Pol. Ind. Cogullada, Av. Alcalde Francisco Caballero 16, 50014;;alta;iberinform
+59;ARAGON WAGEN SL;4781;corporativa;Zaragoza;Av. Navarra 135, 50017 (concesionario VW/Audi);;alta;paginasamarillas
+60;DEXIBERICA SOLUCIONES INDUSTRIALES SAU;4690;corporativa;Zaragoza;Plataforma Logística PLAZA, Calle Caraë 1;;alta;einforma
+61;NUREL SA;2060;114.440.124;Zaragoza;Pol. Ind. Malpica, Ctra. Barcelona (N-IIa) km 329, Santa Isabel;;alta;iberinform
+62;MASTER DISTANCIA SA;8559;113.946.230;Zaragoza;"Plataforma Logística PLAZA (calle Bari); centro Master D";;alta;paginasamarillas
+63;SPORTS EMOTION HUB SL;4649;110.603.043;Zaragoza;Plataforma Logística PLAZA, C/ Turiaso 27 (Fútbol Emotion);;alta;iberinform
+64;SUCESORES DE SIMON FRANCO SA;4682;corporativa;Cuarte de Huerva;Calle de la Constitución 30;;alta;kompass
+65;INDUSTRIAS ARAGONESAS DEL ALUMINIO SA;2442;corporativa;Zaragoza;Pol. Cogullada, Ctra. de Cogullada 31;;media;iberinform
+66;SERVISAR SERVICIOS SOCIALES SL;8899;107.728.884;Zaragoza;Av. Salvador Allende 56 (residencias);Bilbao;media;paginasamarillas
+67;CHEMIEURO INTERNATIONAL SL;4685;corporativa;Zaragoza;Av. Juan Pablo II 35, Torre Aragonia (oficinas);;alta;iberinform
+68;AVANZA ZARAGOZA SA;4931;106.532.510;Zaragoza;C/ Miguel Servet 199 (cocheras autobús urbano);;alta;iberinform
+69;ENERLAND ENGINEERING PROCUREMENT AND CONSTRUCTION SL;4321;corporativa;Zaragoza;Plataforma Logística PLAZA, C/ Bílbilis 18, nave A-4;;alta;infoempresa
+70;SAT N 1733 GRANJA SAN MIGUEL;0147;104.482.804;Villarreal de Huerva;Polígono Las Lomas s/n (avicultura);;alta;iberinform
+71;ENTERPRISE SOLUTIONS OUTSOURCING ESPAÑA SL;6220;corporativa;Zaragoza;Av. Cesáreo Alierta 11 (servicios TI);;media;infonif
+72;PREFABRICADOS TECNYCONTA SLU;2367;103.020.553;Tauste;Ctra. Gallur-Sangüesa km 11 s/n (prefabricados de hormigón);;alta;tecnyconta
+73;COFERDROZA SCL;4684;102.262.211;Zuera;Pol. Ind. Llanos de la Estación, C/ Isaac Peral 1 (centro logístico);;alta;iberinform
+74;ADVANCED ACCELERATOR APPLICATIONS IBERICA SLU;2110;corporativa;La Almunia de Doña Godina;Pol. Ind. La Cuesta, Av. Navarra 3 (radiofármacos, Novartis);;alta;iberinform
+75;IBERCAJA MEDIACION DE SEGUROS SA;6622;101.644.349;Zaragoza;Paseo de la Constitución 4;;alta;iberinform
+76;INDUSTRIAL GANADERA PREMIER SA;0146;corporativa;Bujaraloz;Ctra. A-230 km 32,5 s/n (Premier Pigs, porcino);;alta;iberinform
+77;GRUPOS ELECTROGENOS EUROPA SA;2711;101.484.227;Muel;Pol. Ind. Pitarco II, parcela 20 (GESAN);;alta;panjiva
+78;CAMPODULCE CURADOS SAU;1013;corporativa;Zuera;Pol. Ind. El Campillo 75 (secadero de jamones, Grupo Jorge);;alta;paginasamarillas
+79;SALTOKI SUMINISTROS ZARAGOZA SL;4683;corporativa;Zaragoza;Pol. Cogullada, Av. Alcalde Caballero 16;;alta;iberinform
+80;SPHERE GROUP SPAIN SL;2222;corporativa;Pedrola;Pol. Ind. El Pradillo, C/ Aneto 5 (films plásticos);;alta;dnb
+81;LA ZARAGOZANA SA;1105;96.671.974;Zaragoza;C/ Ramón Berenguer IV 2 (San José) - Cervezas Ámbar;;alta;empresite
+82;ARQUISOCIAL SLU;8899;95.925.236;Zaragoza;C/ Cabezo Buenavista 7 (ayuda a domicilio);;alta;arquisocial
+83;VELPIRI SAU;4632;corporativa;Zuera;Pol. Ind. El Campillo (porcino, entorno Grupo Jorge);Zaragoza;media;einforma
+84;COMERCIAL PRODUCTOS PORCINOS SECUNDARIOS SA;1011;corporativa;Zuera;Pol. Ind. El Campillo (tripería, Grupo Jorge);;alta;ppssa
+85;ELECTRICAL COMPONENTS INTERNATIONAL SLU;2732;93.854.754;Zaragoza;Pol. Ind. El Portazgo, Autovía de Logroño km 6,6 (cableados);;alta;dnb
+86;GESTAMP ARAGON SA;2932;corporativa;Pedrola;Pol. El Pradillo, C/ General Motors 6 (componentes automoción);;alta;kompass
+87;ARDISTEL SL;4650;corporativa;Zaragoza;C/ Caravis 18-20-22, 50197;;alta;empresite
+88;JG GLOBAL LIVESTOCK TRADE SL;4623;88.681.336;Zaragoza;C/ María Zambrano 31, WTCZ (comercio de ganado);;alta;einforma
+89;NOVAPET ENVASE SL;2222;corporativa;Zaragoza;Oficinas Paseo Independencia 21 (plantas del grupo en Barbastro y Fuenlabrada, fuera);Zaragoza;media;alimarket
+90;CELULOSA FABRIL SA;2932;corporativa;Zaragoza;Pol. Malpica, Calle E parc. 5 (CEFA, interior automoción);;alta;iberinform
+91;HIAB CRANES SL;2822;87.136.883;Zaragoza;"Pol. Ind. Malpica, Calle E 86 (Santa Isabel; grúas articuladas)";;alta;alimarket
+92;PUNT ROMA SL;4771;corporativa;FUERA;"Sede operativa en Mataró (Barcelona); en Zaragoza solo tienda/domicilio en C/ Alfonso I 36";Zaragoza;media;linkedin
+93;CONSTRUCCIONES MARIANO LOPEZ NAVARRO SA;4211;corporativa;Zaragoza;C/ Uncastillo 19 bajo, 50008;;alta;iberinform
+94;LACASA SA;1082;corporativa;Utebo;Ctra. N-232 / A-68 km 14 (fábrica de chocolates);;alta;cakedreams
+95;GRANJA VIRGEN DEL ROSARIO SL;4633;corporativa;Villarreal de Huerva;C/ Arrabal s/n, 50490 (producción de huevos);;alta;iberinform
+96;DISTRIBUIDORA INTERNACIONAL CARMEN SA;2932;corporativa;Zaragoza;Pol. Alcalde Caballero, C/ Virgen Buen Acuerdo s/n (DICSA);;alta;dnb
+97;FOODIBEV INTERNATIONAL SL;4619;corporativa;Zaragoza;"C/ Teniente Coronel Valenzuela 5 (oficinas); almacén C/ Vicente Berdusán";;alta;empresite
+98;MARCO INFRAESTRUCTURAS Y MEDIO AMBIENTE SA;4312;81.163.657;Zaragoza;C/ Messina 5, Plataforma Logística PLAZA, 50197;;alta;iberinform
+99;VIALEX CONSTRUCTORA ARAGONESA SLU;4299;corporativa;Zaragoza;C/ Enrique Val 4, 50011 (Grupo Sorigué);;alta;iberinform
+100;INSTALAZA SA;2530;78.823.296;Zaragoza;"C/ Monreal 27 (armamento); factorías también en Cadrete y A-23 km 270";;alta;empresite
+101;INTERNATIONAL CASING PRODUCTS SLU;1011;corporativa;Zaragoza;Mercazaragoza, Ctra. de Cogullada 65 (grupo Vall Companys);;alta;empresite
+102;GENEROS DE PUNTO VICTRIX SL;4642;corporativa;Zaragoza;"C/ Alfonso I 36 (comercio textil; origen registral Barcelona)";;media;iberinform
+103;PASTAS ALIMENTICIAS ROMERO SA;1073;76.107.274;Daroca;Avda. de Madrid 43 (fábrica de pastas);;alta;pastasromero
+104;ENTERPRISE SOLUTIONS CONSULTORIA Y APLICACIONES ESPAÑA SL;6290;corporativa;Zaragoza;Av. Cesáreo Alierta 11, 1ª;;alta;iberinform
+105;ARAIZ SUMINISTROS ELECTRICOS SAU;4650;corporativa;Zaragoza;C/ Jaime Ferrán 17 (Pol. Malpica-Alfindén, 50014);;alta;empresite
+106;PATATAS GOMEZ SL;4631;corporativa;Zaragoza;Mercazaragoza, Camino de Cogullada 65;;alta;paginasamarillas
+107;LABORATORIOS SAPHIR SA;2042;corporativa;Zaragoza;Pol. Malpica, Calle D parc. 66, 50016 (perfumería/cosmética);;alta;empresite
+108;IBERICA DE ALEACIONES LIGERAS SL;2442;corporativa;Pradilla de Ebro;Ctra. Tudela-Alagón A-126 km 42,5 (IDALSA, aluminio);;alta;empresite
+109;SALTOKI LOGISTICA EMPRESARIUM SL;5210;corporativa;Zaragoza;Pol. Empresarium (La Cartuja), C/ Capitana 6;;alta;iberinform
+110;ADI HOGAR Y HOSTELERIA IBERIA SL;4644;71.915.000;Villanueva de Gállego;C/ Río Piedra s/n, Pol. Ind. San Miguel, 50830;Madrid;alta;iberinform
+111;GARDA SERVICIOS DE SEGURIDAD SA;8001;corporativa;Zaragoza;C/ Maestro Estremiana 22, 1º (seguridad privada);;media;iberinform
+112;AVIATO MOTORS SL;4781;corporativa;Zaragoza;Pol. Ind. Molino del Pilar, C/ David Fahrenheit 22, 50015 (concesionario);;alta;motor.es
+113;SOCIEDAD ARAGONESA DE GESTION AGROAMBIENTAL SL;0210;70.530.646;Zaragoza;"Av. de Ranillas 5, edif. A (SARGA; empresa pública)";;alta;iberinform
+114;FERSA BEARINGS SA;2815;70.367.662;Zaragoza;PLAZA, C/ Bari 18 (fábrica de rodamientos);;alta;plazalogistica
+115;AUTOMOVILES SANCHEZ SA;4781;corporativa;Zaragoza;Ctra. de Logroño 32, 50011 (concesionario);;alta;automovilessanchez
+116;EBROSA SAU;6812;corporativa;Zaragoza;Paseo Independencia 21, 3ª (promoción inmobiliaria);;alta;empresite
+117;EXPORTACIONES APOLO GROUP SL;4690;corporativa;Zaragoza;"C/ Bari 57, Edif. TIC XXI (PLAZA); registros antiguos en Cadrete";;media;infonif
+118;DKV SERVICIOS SA;6512;69.582.425;Zaragoza;C/ Poetisa María Zambrano 31, 50018 (sede DKV Seguros);;alta;informa
+119;BUDENHEIM IBERICA SLU;2013;69.364.516;La Zaida;Calle Extramuros s/n, 50784 (química inorgánica);;alta;qdq
+120;DR. SCHAR ESPAÑA SLU;1071;69.319.838;Alagón;Pol. Ind. La Ciruela, Av. de Repol parc. 2, 50630 (fábrica sin gluten);;alta;alimentosmadeinaragon
+121;MAS PREVENCION SERVICIO DE PREVENCION SL;7499;corporativa;Zaragoza;"C/ Alfonso I 17 (sede); centro C/ Monasterio de Samos 31, 50013";;alta;axesor
+122;ESPUBLICO SERVICIOS PARA LA ADMINISTRACION SAU;6210;corporativa;Zaragoza;Pol. PLAZA, C/ Bari 39, 50197;;alta;iberinform
+123;VITALIA SUITE SL;8731;corporativa;Zaragoza;C/ Joaquín Costa 2 (residencias de mayores);;media;empresite
+124;MINERA DE SANTA MARTA SA;0899;67.706.611;Zaragoza;"Paseo Independencia 21 (Grupo SAMCA; plantas de sulfato sódico en Burgos y Toledo, fuera)";;media;einforma
+125;EUROARCE MINERIA SA;0812;67.663.654;Zaragoza;"Paseo Independencia 21, 50001 (oficina; Grupo SAMCA)";;media;infoempresa
+126;VALORISTA SL;4650;corporativa;Zaragoza;Pol. PLAZA, C/ Bari 11 / almacén C/ Bari 28 nave B, 50197;;alta;iberinform
+127;WITTUR ELEVATOR COMPONENTS SA;2822;corporativa;Zaragoza;Pol. Ind. Malpica, Calle E 8, 50016;;alta;wittur
+128;SCANFISK SEAFOOD SL;4632;corporativa;Zaragoza;Mercazaragoza, Ctra. de Cogullada 65, Calle P parc. 29, 50014;;alta;einforma
+129;COALVI SA;4212;64.940.000;Zaragoza;C/ George Stephenson 46, 50015;;alta;einforma
+130;CABLES DE COMUNICACIONES ZARAGOZA SL;2732;64.731.425;Zaragoza;Pol. Ind. Malpica, Calle D 83, 50016 (planta 77.000 m²);;alta;paginasamarillas
+131;GESTAMP MANUFACTURING AUTOCHASIS SL;2932;corporativa;Pedrola;Pol. El Pradillo, C/ Aneto 5, 50690;;alta;kompass
+132;GRUPO METALGRAFICO SA;2592;63.345.941;Sobradiel;Ctra. de Logroño km 16, 50629;;alta;einforma
+133;TROX ESPAÑA SA;2829;62.841.280;Zaragoza;Pol. Ind. La Cartuja, Ctra. Castellón km 7, 50720 (La Cartuja Baja);;alta;aragonhoy
+134;SAT VIDRIO;4631;corporativa;Ricla;"Paraje Tejas Royas, 50270 (cerezas; SAT Red Fruits)";;alta;aragonhoy
+135;ARCELORMITTAL TAILORED BLANKS ZARAGOZA SL;2932;corporativa;Pedrola;Pol. El Pradillo II, C/ General Motors 7, 50690;;alta;innovatus
+136;ELECTRONICA CERLER SA;2640;62.227.374;La Muela;Pol. Ind. Centrovía, Av. Los Ángeles 17, 50196;;alta;einforma
+137;PROFESIONALES DE LA CARNE SL;4632;corporativa;Villanueva de Gállego;C/ Río Vero 1, 50830 (central);;alta;profecarne
+138;TRENDICO GROUP SL;4649;corporativa;Ejea de los Caballeros;"Paseo del Muro 60 bajos, 50600 (origen Twinner; oficina también en WTCZ Zaragoza)";;alta;empresite
+139;COMPAÑIA DE OBRAS PUBLICAS HORMIGONES Y ASFALTOS SL;4102;corporativa;Zaragoza;C/ Uncastillo 19 bajos, 50008 (COPHASA);;alta;axesor
+140;LINAMAR LIGHT METALS ZARAGOZA SA;2454;58.819.582;Zaragoza;"Ctra. de Castellón km 6,4, 50720 (La Cartuja; antigua Alumalsa)";;alta;einforma
+141;EXPLOTACIONES BAJO ARAGON SL;0146;corporativa;Caspe;Partida Vuelta del Rey s/n, 50700 (porcino);;alta;iberinform
+142;PROMA HISPANIA SA;2932;corporativa;Épila;Avenida Opel España, 50290 (componentes automoción);;alta;iberinform
+143;ARQUITECTURA INGENIERIA Y CONSTRUCCION LOBE SA;6812;corporativa;Zaragoza;C/ Monasterio de las Descalzas Reales 26 (Grupo Lobe);;alta;einforma
+144;INSTRUMENTACION Y COMPONENTES SA;6290;corporativa;Zaragoza;C/ Alaún 8, PLAZA, 50197 (INYCOM);;alta;iberinform
+145;OVIARAGON SCL;0145;54.295.342;Zaragoza;Camino de Cogullada 65, Mercazaragoza, Ed. Pastores, 50014;;alta;oviaragon
+146;ARTAL VEHICULOS ZARAGOZA SL;4781;corporativa;Zaragoza;C/ Langa del Castillo 8, 50013 (concesionario Toyota);;alta;einforma
+147;AUGUSTA ARAGON SA;4781;corporativa;Zaragoza;Av. Alcalde Francisco Caballero 112, 50014 (concesionario BMW/MINI);;alta;augustaaragon
+148;MOLINOS DEL EBRO SA;3512;corporativa;Zaragoza;Paseo Independencia 21 (Grupo SAMCA);;media;alimarket
+149;JORGE PORK MEAT SLU;6820;corporativa;Zuera;Complejo cárnico de Grupo Jorge (matadero/despiece);Zaragoza;media;jorgesl
+150;BRILEN TECH SA;2060;53.761.994;FUERA;"Planta en Pol. Valle del Cinca, Barbastro (Huesca); fibras poliéster (Grupo SAMCA)";Zaragoza;media;empresite
+151;VALENTO TEXTILE SL;4642;corporativa;Zaragoza;C/ Burtina 12, PLAZA, 50197 (ropa laboral/deportiva);;alta;valento
+152;GLOBAL SPEDITION SL;4941;corporativa;Zaragoza;C/ Guillermo Gúdel Martí 50, Pol. Malpica, 50016 (transporte ADR);;alta;alimarket
+153;KDK-DONGKOOK AUTOMOTIVE SPAIN SA;2932;corporativa;Borja;Av. Campo de Borja 23, Pol. Ind. Barbalanca, 50540 (plásticos automoción);;alta;kdkautomotive
+154;ZALUX SA;2740;53.083.189;Alhama de Aragón;"Dos plantas (42.000 m²) en Alhama de Aragón; oficinas en Zaragoza (Grupo Trilux)";Zaragoza;alta;interempresas
+155;HIBERUS TECNOLOGIAS DE LA INFORMACION SL;6290;corporativa;Zaragoza;Paseo Isabel la Católica 6, 50009 (y oficinas en PLAZA, C/ Bari 25);;alta;einforma
+156;INSONORIZANTES PELZER SA;2932;corporativa;Zaragoza;Pol. Ind. Malpica, C/ D parc. 36 (Grupo Adler Pelzer);;alta;kompass
+157;OPEL EUROPE HOLDINGS SL;6421;corporativa;Figueruelas;Pol. Entrerríos km 29 s/n, 50639 (planta Stellantis/Opel España);;alta;infoempresa
+158;IDE ELECTRIC SL;2790;corporativa;Zuera;C/ Leonardo da Vinci 2, Pol. Los Huertos, 50800 (envolventes eléctricas);;alta;ide.es
+159;ITESAL SL;2442;corporativa;Pina de Ebro;Polígono Industrial (C/ G) s/n, 50750 (perfiles de aluminio);;alta;einforma
+160;CONTAZARA SA;2651;50.293.541;Zaragoza;"Ctra. de Castellón km 5,5, Pol. San Valero, 50720 (La Cartuja Baja; contadores de agua)";;alta;contazara
+161;MULTIANAU SL;8123;50.129.328;Zaragoza;Calle A 24, Plataforma Ciudad del Transporte (Cogullada/Malpica), 50820;;alta;iberinform
+162;MAETEL INSTALACIONES Y SERVICIOS INDUSTRIALES SAU;4222;49.847.812;Zaragoza;C/ Bari 33, Edificio 3, PLAZA, 50197;;alta;axesor
+163;CABLENA SA;2732;corporativa;Zaragoza;Pol. Ind. Malpica, calle E 43-44, 50016;;alta;kompass
+164;BM SPORTECH IB SL;4649;corporativa;Zaragoza;C/ Terracina 12, PLAZA, 50197;;alta;empresite
+165;BRILEN SA;2060;49.300.124;FUERA;"Oficina en Paseo Independencia 21, Zaragoza; fábrica de hilo de poliéster en Barbastro (Huesca)";Zaragoza;media;infoempresa
+166;CARVISA CONTAINER SL;2522;48.287.927;Remolinos;Ctra. Alagón-Tudela km 44,9, Nave 2, 50637 (grupo Eurocontainer);;alta;iberinform
+167;INTERLAZARO SL;4631;corporativa;Calatayud;Ctra. Madrid-Barcelona km 238,8, 50300;;alta;empresia
+168;INGENIERIA Y APLICACIONES SOLARES ZARAGOZA 2005 SL;4321;corporativa;Zaragoza;C/ Argualas 40, 1º, 50012 (IASOL);;alta;iberinform
+169;ADIEGO HERMANOS SA;4685;corporativa;Cuarte de Huerva;Ctra. de Valencia km 5,9, 50410 (también almacén en Cartuja Baja, Zaragoza);;alta;iberinform
+170;FRUTARIA MARKETS MADRID SA;4631;corporativa;Zaragoza;"C/ Bilbao 5, 50004 (mayorista de frutas; domicilio en Zaragoza pese al nombre)";;alta;iberinform
+171;ITALPANNELLI SA;2513;corporativa;La Almunia de Doña Godina;Pol. Ind. La Cuesta, 50100 (paneles sándwich);;alta;iberinform
+172;SOCIEDAD ANONIMA DE MINERIA Y TECNOLOGIA DE ARCILLAS;0812;46.439.624;Zaragoza;"Paseo Independencia 21, 50001 (MyTA, Grupo SAMCA; explotaciones no localizadas)";;media;empresite
+173;COMERCIAL SALGAR SL;1628;46.298.917;Zaragoza;Autovía de Logroño km 9,5, 50011 (mueble de baño Salgar);;alta;salgar
+174;GRUPO LOGISTICO SESE SL;6421;corporativa;Zaragoza;Sede Grupo Sesé, C/ Virgen del Buen Acuerdo, 50014 (zona Malpica);;alta;gruposese
+175;TUBOS PERFILADOS SA;2221;corporativa;El Burgo de Ebro;Ctra. de Castellón km 15,5, Pol. La Noria, 50730;;alta;datoscif
+176;TELTRONIC SAU;2630;46.072.000;Zaragoza;Pol. Ind. Malpica, calle F Oeste, 50016 (radiocomunicaciones TETRA);;alta;teltronic
+177;SAICA FLEXIBLE SAU;2222;corporativa;Zaragoza;Sede SAICA, C/ San Juan de la Peña 144, 50015 (planta específica no confirmada);;media;saica
+178;ADLER PELZER SPAIN SL;2932;corporativa;Zaragoza;Pol. Ind. Malpica, calle E 36 (insonorizantes automoción);;alta;infoempresa
+179;SERVICIOS RENOVADOS DE ALIMENTACION SAU (SERAL);5621;44.542.000;Zaragoza;C/ Castilla 8-10, 50009 (catering/restauración colectiva);;alta;iberinform/alimarket
+180;PROMOCIONES ARAOPESA SL;6812;corporativa;Zaragoza;C/ Monasterio de las Descalzas Reales 26 (promoción inmobiliaria);;alta;empresia
+181;BUSINESS TELECOMMUNICATIONS SERVICES EUROPE SA;6190;corporativa;Zaragoza;C/ San Miguel 7 / C/ Josefa Amar y Borbón 10, 50001 (telecom, oficina);;alta;iberinform
+182;KETER IBERIA SL;4686;44.009.737;Zaragoza;"Autovía de Logroño (N-232) km 4,5, 50011 (Monzalbarba; planta/almacén)";;alta;kompass/waze
+183;ARALOGIC SL;4941;corporativa;Zuera;Pol. Ind. El Campillo 75, 50800 (transporte de mercancías);;alta;alimarket
+184;ROLABO OUTSOURCING SL;2110;corporativa;Zaragoza;Pol. Ind. Malpica, Calle J parc. 3-4, 50016 (fabricación farmacéutica);;alta;kompass/iberinform
+185;DISTRIBUCIONES RODRIGO SA;4639;corporativa;Zaragoza;Pol. Ind. El Portazgo, Ctra. Logroño 2, nave 73, 50011 (distribución alimentaria);;alta;paginasamarillas
+186;ZOILO RIOS SA;4730;corporativa;Zaragoza;Oficinas y E.S. El Portazgo, Autovía de Logroño p.k. 0,3, 50011;;alta;firmania
+187;MONCAYO AGRICOLA SL;4621;corporativa;Vera de Moncayo;Calle Portaza s/n, 50580;;alta;iberinform
+188;INDUSTRIAS LOPEZ SORIANO SL;4682;corporativa;Zaragoza;Pol. Tecnológico del Reciclado López Soriano, C/ Aluminio 71, Cartuja Baja;;alta;paginasamarillas
+189;NTT DATA SPAIN SOLUCIONES TECNOLOGICAS SL;6290;corporativa;Zaragoza;C.E. El Trovador, Plaza de Antonio Beltrán Martínez 1, 50002 (centro operativo);Madrid;media;infonif
+190;DESARROLLO AGRICOLA Y MINERO SA (DAYMSA);2015;corporativa;Zaragoza;Camino de Enmedio 120, Pol. Ind. Miraflores, 50013;;alta;daymsa
+191;GRUPO DELIFACTORY SL;1054;corporativa;Utebo;"Ctra. de Logroño 92, 50180 (grupo SAMCA); domicilio social en Zaragoza";Zaragoza;media;iberinform
+192;AUTOSALDUBA SA;4781;corporativa;Zaragoza;Av. Cataluña 103-105, 50014 (concesionario Kia);;alta;empresite
+193;ÑAMING SLU;1085;corporativa;Mallén;C/ País Vasco 5, Pol. El Zafranar, 50550;;alta;iberinform
+194;COOP AGRICOLA ARAGONESA DEL EBRO;1091;corporativa;Zaragoza;CADEBRO/Agroveco, Av. de Logroño 136, 50011 (Casetas);;alta;empresite
+195;OLEOHIDRAULICA FERRUZ SA;2812;40.658.458;Zaragoza;C/ Cobalto 31, Parque Tecnológico de Reciclado (PTR), 50720;;alta;empresite
+196;AGROPECUARIA DEL VALLE DEL EBRO S.COOP;1091;corporativa;Zaragoza;Ctra. de Logroño, 50620 (Casetas, barrio de Zaragoza);;media;kompass
+197;ESPADESA RETAIL SL;3100;corporativa;Zaragoza;Ronda del Ferrocarril 24, PLAZA, 50197 (Española del Descanso);;alta;iberinform
+198;DIAGNOSTICA LONGWOOD SL;4646;corporativa;Zaragoza;Av. Diagonal 40, Pol. PLAZA, 50197;;alta;dlongwood
+199;SERVICIOS LOGISTICOS MARTORELL SIGLO XXI SL;4941;corporativa;Zaragoza;C/ Virgen del Buen Acuerdo 5, 50014 (Grupo Sesé);;alta;iberinform
+200;CERTEST BIOTEC SL;2120;corporativa;San Mateo de Gállego;Pol. Ind. Río Gállego II, Calle J nº 1, 50840;;alta;certest

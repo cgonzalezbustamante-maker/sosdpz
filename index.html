@@ -85,6 +85,19 @@
   .modo-tabs button{flex:1;padding:8px 6px;border:2px solid var(--tinta);background:#f4f1ea;color:var(--tinta);font-weight:800;font-size:12px;border-radius:6px;cursor:pointer}
   .modo-tabs button:hover{background:#eddfc7}
   .modo-tabs button.on{background:var(--rojo);color:#fff;border-color:var(--rojo)}
+  /* Botón toggle de empresas + marca de empresa (magenta, para destacar sobre la
+     paleta térmica verde→rojo de los municipios). Solo en modo Tiempos mínimos. */
+  #btn-empresas{width:100%;margin-bottom:12px;padding:8px 6px;border:2px solid #ff009d;
+     background:#fff;color:#b3006e;font-weight:800;font-size:12px;border-radius:6px;cursor:pointer;
+     display:flex;align-items:center;justify-content:center;gap:6px}
+  #btn-empresas:hover{background:#ffe6f4}
+  #btn-empresas.on{background:#ff009d;color:#fff}
+  #btn-empresas:disabled{opacity:.4;cursor:not-allowed;background:#fff;color:#b3006e}
+  .emp-mark{width:14px;height:14px;border-radius:50%;background:#ff009d;
+     border:2.5px solid #fff;box-shadow:0 0 0 1.6px #40002a,0 2px 5px #0008;cursor:pointer}
+  .emp-mark:hover{transform:scale(1.25)}
+  .emp-tip{font-family:inherit;font-size:12px}
+  .emp-tip b{color:#b3006e}
   .totales{margin-top:14px;padding:10px;background:#fff5e0;border:1.5px solid var(--oro);border-radius:6px;font-size:12px}
   .totales b{color:var(--rojo)}
   .btn-reset{margin-top:10px;width:100%;padding:8px;background:var(--tinta);color:#fff;border:none;border-radius:5px;cursor:pointer;font-weight:700}
@@ -157,6 +170,11 @@
   .foco-popup .cab.claro{color:#000;text-shadow:none}
   .foco-popup .cab .n{font-size:14.5px;font-weight:900;letter-spacing:.02em}
   .foco-popup .cab .p{font-size:11.5px;opacity:.95;margin-top:3px}
+  /* Banda superior con el nombre de la empresa (cuando el panel se abre desde
+     una marca de empresa). Magenta, a juego con la marca. */
+  .foco-popup .emp-cab{background:#ff009d;color:#fff;padding:6px 12px;border-radius:5px 5px 0 0;
+     text-align:center;font-weight:900;font-size:12.5px;line-height:1.25;letter-spacing:.01em;
+     box-shadow:inset 0 -2px 0 #0003}
   .foco-popup table{width:100%;border-collapse:collapse;background:#fff;font-size:12px}
   .foco-popup td{padding:5px 8px;border-bottom:1px solid #eee}
   .foco-popup tr:last-child td{border-bottom:none}
@@ -231,6 +249,7 @@
       <button id="tab-tiempos" class="on" onclick="setModo('tiempos')">⏱ Tiempos mínimos</button>
       <button id="tab-isocronas" onclick="setModo('isocronas')">🗺 Isócronas</button>
     </div>
+    <button id="btn-empresas" onclick="toggleEmpresas()" title="Muestra las principales empresas ubicadas fuera de la capital (solo en modo Tiempos mínimos)">🏭 Empresas (fuera de la capital)</button>
     <div class="leyenda">
       <span style="background:var(--v)">0–15 min</span>
       <span style="background:var(--a)">15–35 min</span>
@@ -288,6 +307,14 @@ const capaLbls = L.layerGroup().addTo(map);
 // parques que lo cubren (asignado + cerrados que podrían cubrirlo), y un
 // popup detallado con todos los parques y tiempos.
 const capaFoco = L.layerGroup().addTo(map);
+// Capa de marcas de empresas (principales empresas ubicadas FUERA de la capital).
+// Pane propio por encima de los rellenos de municipio para que destaquen.
+map.createPane('empresasPane'); map.getPane('empresasPane').style.zIndex = 655;
+const capaEmpresas = L.layerGroup().addTo(map);
+let EMPRESAS = null;            // [{nombre, municipio, ubicacion, pos}]
+let mostrarEmpresas = false;
+fetch('empresas_marcas.json',{cache:'no-store'}).then(r=>r.json())
+  .then(d=>{ EMPRESAS = d; renderEmpresas(); }).catch(()=>{ EMPRESAS = []; });
 let _munEnfocado = null;
 // Estado de la línea de unión popup↔mun para poder redibujarla dinámicamente
 // cuando cambia el zoom o el usuario mueve el mapa (así la línea "vive" pegada
@@ -378,6 +405,9 @@ function setModo(m){
   document.getElementById('tab-tiempos').classList.toggle('on', m==='tiempos');
   document.getElementById('tab-isocronas').classList.toggle('on', m==='isocronas');
   if(m!=='isocronas' && _zonaParque) desactivarZona(false);
+  const be=document.getElementById('btn-empresas');
+  if(be){ be.disabled = (m!=='tiempos'); be.title = (m!=='tiempos')
+    ? 'Disponible solo en modo Tiempos mínimos' : 'Muestra las principales empresas ubicadas fuera de la capital'; }
   renderLeyendaMapa();
   refrescar();
 }
@@ -496,7 +526,45 @@ function renderParques(){
   });
 }
 
-function refrescar(){ renderMuns(); renderParques(); renderPanel(); renderPeorCubiertos(); if(modo==='isocronas') renderLeyendaMapa(); if(_zonaParque) sincronizarZona(); }
+// ─── Marcas de empresas (fuera de la capital) ──────────────────
+// Dibuja una marca magenta por empresa, agrupadas por municipio. Cuando hay
+// varias en el mismo municipio se reparten en un pequeño anillo alrededor del
+// punto del municipio para que no se solapen. Solo en modo Tiempos mínimos.
+function renderEmpresas(){
+  capaEmpresas.clearLayers();
+  if(!mostrarEmpresas || modo!=='tiempos' || !EMPRESAS || !DATOS) return;
+  const porMun = {};
+  EMPRESAS.forEach(e=>{ (porMun[e.municipio]=porMun[e.municipio]||[]).push(e); });
+  Object.entries(porMun).forEach(([mun, lst])=>{
+    const mv = DATOS.muns[mun];
+    if(!mv || mv.lat==null || mv.lon==null) return;
+    const cx = mv.lat, cy = mv.lon, k = lst.length;
+    const R = Math.min(0.011, 0.0032 + 0.0011*k);   // radio del anillo (grados)
+    lst.forEach((e, i)=>{
+      let lat = cx, lon = cy;
+      if(k>1){
+        const ang = (2*Math.PI*i)/k - Math.PI/2;
+        lat = cx + R*Math.sin(ang)*0.72;            // achatado en latitud
+        lon = cy + R*Math.cos(ang);
+      }
+      const tip = '<b>'+e.nombre+'</b><br><span style="color:#555">'+mun+'</span>'+
+        (e.ubicacion?'<br><span style="font-size:11px;color:#777">'+e.ubicacion+'</span>':'');
+      L.marker([lat,lon],{
+        pane:'empresasPane', zIndexOffset:3000,
+        icon:L.divIcon({className:'', iconSize:[19,19], iconAnchor:[9,9], html:'<div class="emp-mark"></div>'})
+      }).bindTooltip(tip,{direction:'top',offset:[0,-9],className:'emp-tip',sticky:true})
+        .on('click', ()=>focoMun(mun, e.nombre))
+        .addTo(capaEmpresas);
+    });
+  });
+}
+function toggleEmpresas(){
+  if(modo!=='tiempos') return;
+  mostrarEmpresas = !mostrarEmpresas;
+  const b=document.getElementById('btn-empresas'); if(b) b.classList.toggle('on', mostrarEmpresas);
+  renderEmpresas();
+}
+function refrescar(){ renderMuns(); renderParques(); renderPanel(); renderPeorCubiertos(); renderEmpresas(); if(modo==='isocronas') renderLeyendaMapa(); if(_zonaParque) sincronizarZona(); }
 
 // Panel "Municipios peor cubiertos" — TOP 10 por franja de tiempo, ordenados
 // por población descendente dentro de cada franja. Sirve para identificar
@@ -570,7 +638,7 @@ function renderPeorCubiertos(){
 // (verde) y a los parques cerrados que podrían cubrirlo (amarillo hazard
 // discontinuo), y abre un popup con el detalle de todos los parques que
 // atienden el municipio y sus tiempos, coloreado según franja de tiempo.
-function focoMun(mun){
+function focoMun(mun, empresa){
   const mv = DATOS.muns[mun];
   if(!mv || !mv.parques || !mv.parques.length){ return; }
   _munEnfocado = mun;
@@ -644,9 +712,12 @@ function focoMun(mun){
   const tiempoTxt = asig ? asig.min.toFixed(1)+' min → '+asig.parque : 'SIN COBERTURA';
   // Fondo amarillo (franja 15-35 min) → texto negro para contraste.
   const claro = asig && asig.min > 15 && asig.min <= 35;
+  const empBand = empresa ? '<div class="emp-cab">🏭 '+empresa+'</div>' : '';
+  const cabRad = empresa ? 'border-radius:0;' : '';
   const html =
     '<div class="foco-popup">'+
-      '<div class="cab'+(claro?' claro':'')+'" style="background:'+colFranja+'">'+
+      empBand+
+      '<div class="cab'+(claro?' claro':'')+'" style="'+cabRad+'background:'+colFranja+'">'+
         '<div class="n">'+mun+'</div>'+
         '<div class="p">'+mv.pob.toLocaleString('es-ES')+' hab · '+mv.sup_km2.toFixed(1)+' km² · '+tiempoTxt+'</div>'+
       '</div>'+
@@ -669,7 +740,7 @@ function focoMun(mun){
   //    dividen el círculo en N sectores; se elige el bisector del sector
   //    mayor. Si hay 1 parque, se coloca en el sentido opuesto (sector 360°).
   const popW = 260;
-  const popH = 55 + filas.length*32 + 32;  // cab + filas + cerrar (estimación)
+  const popH = 55 + filas.length*32 + 32 + (empresa?30:0);  // cab + filas + cerrar (+ banda empresa)
   const OFF_RADIUS = 130;                  // distancia centro-popup ↔ centro-mun (px)
   const cxPt = map.latLngToContainerPoint(centro);
   // Bearings (radianes) de cada parque desde el mun, en coordenadas de pantalla

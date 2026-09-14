@@ -1,0 +1,1202 @@
+[
+ {
+  "pos": 1,
+  "nombre": "BSH ELECTRODOMESTICOS ESPAÑA SA",
+  "facturacion": "1.592.924.000",
+  "cnae": "2751"
+ },
+ {
+  "pos": 2,
+  "nombre": "ALLIANCE HEALTHCARE ESPAÑA SOCIEDAD ANONIMA",
+  "facturacion": "1.472.286.000",
+  "cnae": "4646"
+ },
+ {
+  "pos": 3,
+  "nombre": "RIVASAM INTERCONTINENTAL SA",
+  "facturacion": "1.280.659.180",
+  "cnae": "4632"
+ },
+ {
+  "pos": 4,
+  "nombre": "ESPRINET IBERICA SLU",
+  "facturacion": "1.252.334.000",
+  "cnae": "4650"
+ },
+ {
+  "pos": 5,
+  "nombre": "SOCIEDAD ANONIMA INDUSTRIAS CELULOSA ARAGONESA",
+  "facturacion": "1.081.338.609",
+  "cnae": "1712"
+ },
+ {
+  "pos": 6,
+  "nombre": "ADIDAS ESPAÑA SAU",
+  "facturacion": "682.195.806",
+  "cnae": "4642"
+ },
+ {
+  "pos": 7,
+  "nombre": "CARNICAS CINCO VILLAS SA",
+  "facturacion": "674.240.359",
+  "cnae": "0146"
+ },
+ {
+  "pos": 8,
+  "nombre": "FUJIKURA AUTOMOTIVE EUROPE SAU",
+  "facturacion": "499.155.845",
+  "cnae": "4650"
+ },
+ {
+  "pos": 9,
+  "nombre": "ADIENT SEATING SPAIN SL.",
+  "facturacion": "485.075.436",
+  "cnae": "2932"
+ },
+ {
+  "pos": 10,
+  "nombre": "CUARTE SL",
+  "facturacion": "400.006.180",
+  "cnae": "0146"
+ },
+ {
+  "pos": 11,
+  "nombre": "TRANS SESE SL",
+  "facturacion": "387.445.978",
+  "cnae": "4941"
+ },
+ {
+  "pos": 12,
+  "nombre": "NOVALTIA S.COOP.",
+  "facturacion": "corporativa",
+  "cnae": "4646"
+ },
+ {
+  "pos": 13,
+  "nombre": "SCHINDLER, SA",
+  "facturacion": "351.465.000",
+  "cnae": "2822"
+ },
+ {
+  "pos": 14,
+  "nombre": "SAICA PACK SL",
+  "facturacion": "317.617.178",
+  "cnae": "1721"
+ },
+ {
+  "pos": 15,
+  "nombre": "CARRERAS GRUPO LOGISTICO SA.",
+  "facturacion": "311.177.713",
+  "cnae": "4941"
+ },
+ {
+  "pos": 16,
+  "nombre": "MEGASIDER ZARAGOZA SA",
+  "facturacion": "corporativa",
+  "cnae": "2410"
+ },
+ {
+  "pos": 17,
+  "nombre": "AMPLIFON IBERICA SAU",
+  "facturacion": "295.322.000",
+  "cnae": "4774"
+ },
+ {
+  "pos": 18,
+  "nombre": "LECITRAILER SA",
+  "facturacion": "295.133.547",
+  "cnae": "2920"
+ },
+ {
+  "pos": 19,
+  "nombre": "ARGAL ALIMENTACION SA.",
+  "facturacion": "corporativa",
+  "cnae": "1013"
+ },
+ {
+  "pos": 20,
+  "nombre": "PROFAND ZARAGOZA SOCIEDAD LIMITADA.",
+  "facturacion": "285.094.605",
+  "cnae": "4632"
+ },
+ {
+  "pos": 21,
+  "nombre": "SAICA NATUR SOCIEDAD LIMITADA",
+  "facturacion": "273.169.358",
+  "cnae": "3821"
+ },
+ {
+  "pos": 22,
+  "nombre": "HMY YUDIGAR EQUIPAMIENTO SLU",
+  "facturacion": "269.987.384",
+  "cnae": "4690"
+ },
+ {
+  "pos": 23,
+  "nombre": "INDUSTRIE CARTARIE TRONCHETTI IBERICA SLU",
+  "facturacion": "265.443.811",
+  "cnae": "1712"
+ },
+ {
+  "pos": 24,
+  "nombre": "VIAN AS AUTOMOBILE SL",
+  "facturacion": "corporativa",
+  "cnae": "4781"
+ },
+ {
+  "pos": 25,
+  "nombre": "NOVAPET SA",
+  "facturacion": "232.696.720",
+  "cnae": "2016"
+ },
+ {
+  "pos": 26,
+  "nombre": "S.C. GANADERA DE CASPE DE RESPONSABILIDAD LIMITADA",
+  "facturacion": "corporativa",
+  "cnae": "1091"
+ },
+ {
+  "pos": 27,
+  "nombre": "PRIMACARNE SL",
+  "facturacion": "corporativa",
+  "cnae": "1013"
+ },
+ {
+  "pos": 28,
+  "nombre": "ARAGOCIAS, SOCIEDAD ANONIMA",
+  "facturacion": "216.427.409",
+  "cnae": "8299"
+ },
+ {
+  "pos": 29,
+  "nombre": "DANIEL AGUILO PANISELLO SOCIEDAD ANONIMA",
+  "facturacion": "209.570.034",
+  "cnae": "1721"
+ },
+ {
+  "pos": 30,
+  "nombre": "CASEN RECORDATI SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "4646"
+ },
+ {
+  "pos": 31,
+  "nombre": "YUDIGAR SL",
+  "facturacion": "197.299.854",
+  "cnae": "3100"
+ },
+ {
+  "pos": 32,
+  "nombre": "PROCLINIC SAU",
+  "facturacion": "corporativa",
+  "cnae": "4646"
+ },
+ {
+  "pos": 33,
+  "nombre": "IBERCAJA GESTION SGIIC SA",
+  "facturacion": "193.435.543",
+  "cnae": "6630"
+ },
+ {
+  "pos": 34,
+  "nombre": "ADIENT AUTOMOTIVE SL.",
+  "facturacion": "corporativa",
+  "cnae": "2932"
+ },
+ {
+  "pos": 35,
+  "nombre": "TEREOS STARCH & SWEETENERS IBERIA S.A.U.",
+  "facturacion": "180.745.665",
+  "cnae": "1062"
+ },
+ {
+  "pos": 36,
+  "nombre": "BEBINTER SA",
+  "facturacion": "178.107.683",
+  "cnae": "4634"
+ },
+ {
+  "pos": 37,
+  "nombre": "AVES NOBLES Y DERIVADOS SL",
+  "facturacion": "corporativa",
+  "cnae": "1013"
+ },
+ {
+  "pos": 38,
+  "nombre": "EIGO GESTION DE OBRAS SOCIEDAD LIMITADA.",
+  "facturacion": "175.524.726",
+  "cnae": "4101"
+ },
+ {
+  "pos": 39,
+  "nombre": "GRANJA BAILON SL",
+  "facturacion": "173.402.897",
+  "cnae": "0147"
+ },
+ {
+  "pos": 40,
+  "nombre": "PIKOLIN SL",
+  "facturacion": "168.192.591",
+  "cnae": "3100"
+ },
+ {
+  "pos": 41,
+  "nombre": "MANN-HUMMEL IBERICA SA",
+  "facturacion": "corporativa",
+  "cnae": "2932"
+ },
+ {
+  "pos": 42,
+  "nombre": "SALTOKI LOGISTICA ZARAGOZA SA.",
+  "facturacion": "corporativa",
+  "cnae": "4683"
+ },
+ {
+  "pos": 43,
+  "nombre": "SOLITIUM SL.",
+  "facturacion": "corporativa",
+  "cnae": "4650"
+ },
+ {
+  "pos": 44,
+  "nombre": "DELSO FERTILIZANTES GRUPO SL",
+  "facturacion": "corporativa",
+  "cnae": "4685"
+ },
+ {
+  "pos": 45,
+  "nombre": "MOWI IBERIA, SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "4632"
+ },
+ {
+  "pos": 46,
+  "nombre": "LEAR CORPORATION ASIENTOS SOCIEDAD LIMITADA",
+  "facturacion": "corporativa",
+  "cnae": "2932"
+ },
+ {
+  "pos": 47,
+  "nombre": "ARAGONESA DE PIENSOS, SAU",
+  "facturacion": "corporativa",
+  "cnae": "1091"
+ },
+ {
+  "pos": 48,
+  "nombre": "SMR AUTOMOTIVE SYSTEMS SPAIN S.A.U",
+  "facturacion": "corporativa",
+  "cnae": "2932"
+ },
+ {
+  "pos": 49,
+  "nombre": "INDUSTRIAS QUIMICAS DEL EBRO, SA",
+  "facturacion": "135.475.745",
+  "cnae": "2013"
+ },
+ {
+  "pos": 50,
+  "nombre": "AGREDA AUTOMOVIL, SA",
+  "facturacion": "corporativa",
+  "cnae": "4781"
+ },
+ {
+  "pos": 51,
+  "nombre": "OMYA CLARIANA SLU",
+  "facturacion": "134.624.000",
+  "cnae": "0811"
+ },
+ {
+  "pos": 52,
+  "nombre": "CABLES RCT SA",
+  "facturacion": "132.641.545",
+  "cnae": "2732"
+ },
+ {
+  "pos": 53,
+  "nombre": "COMERCIAL CHOCOLATES LACASA SA",
+  "facturacion": "132.422.978",
+  "cnae": "4636"
+ },
+ {
+  "pos": 54,
+  "nombre": "FERTINAGRO AGROVIP SL.",
+  "facturacion": "corporativa",
+  "cnae": "4685"
+ },
+ {
+  "pos": 55,
+  "nombre": "DISTRIBUCIONES AGROPECUARIAS DE ARAGON SL",
+  "facturacion": "corporativa",
+  "cnae": "4621"
+ },
+ {
+  "pos": 56,
+  "nombre": "FARMHISPANIA S.A.",
+  "facturacion": "corporativa",
+  "cnae": "2110"
+ },
+ {
+  "pos": 57,
+  "nombre": "VITALIA HOME SOCIEDAD LIMITADA.",
+  "facturacion": "117.012.224",
+  "cnae": "8731"
+ },
+ {
+  "pos": 58,
+  "nombre": "BRASS & FITTINGS SL",
+  "facturacion": "corporativa",
+  "cnae": "4683"
+ },
+ {
+  "pos": 59,
+  "nombre": "ARAGON WAGEN SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "4781"
+ },
+ {
+  "pos": 60,
+  "nombre": "DEXIBERICA SOLUCIONES INDUSTRIALES SAU",
+  "facturacion": "corporativa",
+  "cnae": "4690"
+ },
+ {
+  "pos": 61,
+  "nombre": "NUREL SA",
+  "facturacion": "114.440.124",
+  "cnae": "2060"
+ },
+ {
+  "pos": 62,
+  "nombre": "MASTER DISTANCIA SA",
+  "facturacion": "113.946.230",
+  "cnae": "8559"
+ },
+ {
+  "pos": 63,
+  "nombre": "SPORTS EMOTION HUB SL.",
+  "facturacion": "110.603.043",
+  "cnae": "4649"
+ },
+ {
+  "pos": 64,
+  "nombre": "SUCESORES DE SIMON FRANCO SA",
+  "facturacion": "corporativa",
+  "cnae": "4682"
+ },
+ {
+  "pos": 65,
+  "nombre": "INDUSTRIAS ARAGONESAS DEL ALUMINIO SA",
+  "facturacion": "corporativa",
+  "cnae": "2442"
+ },
+ {
+  "pos": 66,
+  "nombre": "SERVISAR SERVICIOS SOCIALES SL",
+  "facturacion": "107.728.884",
+  "cnae": "8899"
+ },
+ {
+  "pos": 67,
+  "nombre": "CHEMIEURO INTERNATIONAL SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "4685"
+ },
+ {
+  "pos": 68,
+  "nombre": "AVANZA ZARAGOZA SA.",
+  "facturacion": "106.532.510",
+  "cnae": "4931"
+ },
+ {
+  "pos": 69,
+  "nombre": "ENERLAND ENGINEERING, PROCUREMENT AND CONSTRUCTION SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "4321"
+ },
+ {
+  "pos": 70,
+  "nombre": "SAT N 1733 GRANJA SAN MIGUEL",
+  "facturacion": "104.482.804",
+  "cnae": "0147"
+ },
+ {
+  "pos": 71,
+  "nombre": "ENTERPRISE SOLUTIONS OUTSOURCING ESPAÑA SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "6220"
+ },
+ {
+  "pos": 72,
+  "nombre": "PREFABRICADOS TECNYCONTA S.L.U.",
+  "facturacion": "103.020.553",
+  "cnae": "2367"
+ },
+ {
+  "pos": 73,
+  "nombre": "COFERDROZA S.C.L.",
+  "facturacion": "102.262.211",
+  "cnae": "4684"
+ },
+ {
+  "pos": 74,
+  "nombre": "ADVANCED ACCELERATOR APPLICATIONS IBERICA SLU",
+  "facturacion": "corporativa",
+  "cnae": "2110"
+ },
+ {
+  "pos": 75,
+  "nombre": "IBERCAJA MEDIACION DE SEGUROS SA",
+  "facturacion": "101.644.349",
+  "cnae": "6622"
+ },
+ {
+  "pos": 76,
+  "nombre": "INDUSTRIAL GANADERA PREMIER SA.",
+  "facturacion": "corporativa",
+  "cnae": "0146"
+ },
+ {
+  "pos": 77,
+  "nombre": "GRUPOS ELECTROGENOS EUROPA SA.",
+  "facturacion": "101.484.227",
+  "cnae": "2711"
+ },
+ {
+  "pos": 78,
+  "nombre": "CAMPODULCE CURADOS SAU.",
+  "facturacion": "corporativa",
+  "cnae": "1013"
+ },
+ {
+  "pos": 79,
+  "nombre": "SALTOKI SUMINISTROS ZARAGOZA, SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "4683"
+ },
+ {
+  "pos": 80,
+  "nombre": "SPHERE GROUP SPAIN S.L.",
+  "facturacion": "corporativa",
+  "cnae": "2222"
+ },
+ {
+  "pos": 81,
+  "nombre": "LA ZARAGOZANA SA",
+  "facturacion": "96.671.974",
+  "cnae": "1105"
+ },
+ {
+  "pos": 82,
+  "nombre": "ARQUISOCIAL SLU",
+  "facturacion": "95.925.236",
+  "cnae": "8899"
+ },
+ {
+  "pos": 83,
+  "nombre": "VELPIRI SAU.",
+  "facturacion": "corporativa",
+  "cnae": "4632"
+ },
+ {
+  "pos": 84,
+  "nombre": "COMERCIAL PRODUCTOS PORCINOS SECUNDARIOS SA.",
+  "facturacion": "corporativa",
+  "cnae": "1011"
+ },
+ {
+  "pos": 85,
+  "nombre": "ELECTRICAL COMPONENTS INTERNATIONAL SLU",
+  "facturacion": "93.854.754",
+  "cnae": "2732"
+ },
+ {
+  "pos": 86,
+  "nombre": "GESTAMP ARAGON SA.",
+  "facturacion": "corporativa",
+  "cnae": "2932"
+ },
+ {
+  "pos": 87,
+  "nombre": "ARDISTEL SL",
+  "facturacion": "corporativa",
+  "cnae": "4650"
+ },
+ {
+  "pos": 88,
+  "nombre": "JG GLOBAL LIVESTOCK TRADE SL.",
+  "facturacion": "88.681.336",
+  "cnae": "4623"
+ },
+ {
+  "pos": 89,
+  "nombre": "NOVAPET ENVASE SL.",
+  "facturacion": "corporativa",
+  "cnae": "2222"
+ },
+ {
+  "pos": 90,
+  "nombre": "CELULOSA FABRIL SA",
+  "facturacion": "corporativa",
+  "cnae": "2932"
+ },
+ {
+  "pos": 91,
+  "nombre": "HIAB CRANES SL",
+  "facturacion": "87.136.883",
+  "cnae": "2822"
+ },
+ {
+  "pos": 92,
+  "nombre": "PUNT ROMA SL",
+  "facturacion": "corporativa",
+  "cnae": "4771"
+ },
+ {
+  "pos": 93,
+  "nombre": "CONSTRUCCIONES MARIANO LOPEZ NAVARRO SA",
+  "facturacion": "corporativa",
+  "cnae": "4211"
+ },
+ {
+  "pos": 94,
+  "nombre": "LACASA SA",
+  "facturacion": "corporativa",
+  "cnae": "1082"
+ },
+ {
+  "pos": 95,
+  "nombre": "GRANJA VIRGEN DEL ROSARIO SL",
+  "facturacion": "corporativa",
+  "cnae": "4633"
+ },
+ {
+  "pos": 96,
+  "nombre": "DISTRIBUIDORA INTERNACIONAL CARMEN SA",
+  "facturacion": "corporativa",
+  "cnae": "2932"
+ },
+ {
+  "pos": 97,
+  "nombre": "FOODIBEV INTERNATIONAL SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "4619"
+ },
+ {
+  "pos": 98,
+  "nombre": "MARCO INFRAESTRUCTURAS Y MEDIO AMBIENTE SOCIEDAD ANONIMA.",
+  "facturacion": "81.163.657",
+  "cnae": "4312"
+ },
+ {
+  "pos": 99,
+  "nombre": "VIALEX CONSTRUCTORA ARAGONESA SLU.",
+  "facturacion": "corporativa",
+  "cnae": "4299"
+ },
+ {
+  "pos": 100,
+  "nombre": "INSTALAZA, SA",
+  "facturacion": "78.823.296",
+  "cnae": "2530"
+ },
+ {
+  "pos": 101,
+  "nombre": "INTERNATIONAL CASING PRODUCTS SLU",
+  "facturacion": "corporativa",
+  "cnae": "1011"
+ },
+ {
+  "pos": 102,
+  "nombre": "GENEROS DE PUNTO VICTRIX SL",
+  "facturacion": "corporativa",
+  "cnae": "4642"
+ },
+ {
+  "pos": 103,
+  "nombre": "PASTAS ALIMENTICIAS ROMERO SA",
+  "facturacion": "76.107.274",
+  "cnae": "1073"
+ },
+ {
+  "pos": 104,
+  "nombre": "ENTERPRISE SOLUTIONS CONSULTORIA Y APLICACIONES ESPAÑA SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "6290"
+ },
+ {
+  "pos": 105,
+  "nombre": "ARAIZ SUMINISTROS ELECTRICOS, SAU",
+  "facturacion": "corporativa",
+  "cnae": "4650"
+ },
+ {
+  "pos": 106,
+  "nombre": "PATATAS GOMEZ SL",
+  "facturacion": "corporativa",
+  "cnae": "4631"
+ },
+ {
+  "pos": 107,
+  "nombre": "LABORATORIOS SAPHIR SA",
+  "facturacion": "corporativa",
+  "cnae": "2042"
+ },
+ {
+  "pos": 108,
+  "nombre": "IBERICA DE ALEACIONES LIGERAS SL",
+  "facturacion": "corporativa",
+  "cnae": "2442"
+ },
+ {
+  "pos": 109,
+  "nombre": "SALTOKI LOGISTICA EMPRESARIUM SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "5210"
+ },
+ {
+  "pos": 110,
+  "nombre": "ADI HOGAR Y HOSTELERIA IBERIA, SOCIEDAD LIMITADA.",
+  "facturacion": "71.915.000",
+  "cnae": "4644"
+ },
+ {
+  "pos": 111,
+  "nombre": "GARDA SERVICIOS DE SEGURIDAD SA",
+  "facturacion": "corporativa",
+  "cnae": "8001"
+ },
+ {
+  "pos": 112,
+  "nombre": "AVIATO MOTORS SL.",
+  "facturacion": "corporativa",
+  "cnae": "4781"
+ },
+ {
+  "pos": 113,
+  "nombre": "SOCIEDAD ARAGONESA DE GESTION AGROAMBIENTAL SL.",
+  "facturacion": "70.530.646",
+  "cnae": "0210"
+ },
+ {
+  "pos": 114,
+  "nombre": "FERSA BEARINGS SA",
+  "facturacion": "70.367.662",
+  "cnae": "2815"
+ },
+ {
+  "pos": 115,
+  "nombre": "AUTOMOVILES SANCHEZ, SA",
+  "facturacion": "corporativa",
+  "cnae": "4781"
+ },
+ {
+  "pos": 116,
+  "nombre": "EBROSA SAU",
+  "facturacion": "corporativa",
+  "cnae": "6812"
+ },
+ {
+  "pos": 117,
+  "nombre": "EXPORTACIONES APOLO GROUP SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "4690"
+ },
+ {
+  "pos": 118,
+  "nombre": "DKV SERVICIOS SA",
+  "facturacion": "69.582.425",
+  "cnae": "6512"
+ },
+ {
+  "pos": 119,
+  "nombre": "BUDENHEIM IBERICA SLU",
+  "facturacion": "69.364.516",
+  "cnae": "2013"
+ },
+ {
+  "pos": 120,
+  "nombre": "DR. SCHAR ESPAÑA, SLU",
+  "facturacion": "69.319.838",
+  "cnae": "1071"
+ },
+ {
+  "pos": 121,
+  "nombre": "MAS PREVENCION SERVICIO DE PREVENCION SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "7499"
+ },
+ {
+  "pos": 122,
+  "nombre": "ESPUBLICO SERVICIOS PARA LA ADMINISTRACION SAU",
+  "facturacion": "corporativa",
+  "cnae": "6210"
+ },
+ {
+  "pos": 123,
+  "nombre": "VITALIA SUITE, SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "8731"
+ },
+ {
+  "pos": 124,
+  "nombre": "MINERA DE SANTA MARTA SA",
+  "facturacion": "67.706.611",
+  "cnae": "0899"
+ },
+ {
+  "pos": 125,
+  "nombre": "EUROARCE MINERIA S.A.",
+  "facturacion": "67.663.654",
+  "cnae": "0812"
+ },
+ {
+  "pos": 126,
+  "nombre": "VALORISTA SL.",
+  "facturacion": "corporativa",
+  "cnae": "4650"
+ },
+ {
+  "pos": 127,
+  "nombre": "WITTUR ELEVATOR COMPONENTS SOCIEDAD ANONIMA",
+  "facturacion": "corporativa",
+  "cnae": "2822"
+ },
+ {
+  "pos": 128,
+  "nombre": "SCANFISK SEAFOOD SL",
+  "facturacion": "corporativa",
+  "cnae": "4632"
+ },
+ {
+  "pos": 129,
+  "nombre": "COALVI SA",
+  "facturacion": "64.940.000",
+  "cnae": "4212"
+ },
+ {
+  "pos": 130,
+  "nombre": "CABLES DE COMUNICACIONES ZARAGOZA SL",
+  "facturacion": "64.731.425",
+  "cnae": "2732"
+ },
+ {
+  "pos": 131,
+  "nombre": "GESTAMP MANUFACTURING AUTOCHASIS SL",
+  "facturacion": "corporativa",
+  "cnae": "2932"
+ },
+ {
+  "pos": 132,
+  "nombre": "GRUPO METALGRAFICO, SA",
+  "facturacion": "63.345.941",
+  "cnae": "2592"
+ },
+ {
+  "pos": 133,
+  "nombre": "TROX ESPAÑA SA",
+  "facturacion": "62.841.280",
+  "cnae": "2829"
+ },
+ {
+  "pos": 134,
+  "nombre": "SAT VIDRIO",
+  "facturacion": "corporativa",
+  "cnae": "4631"
+ },
+ {
+  "pos": 135,
+  "nombre": "ARCELORMITTAL TAILORED BLANKS ZARAGOZA SL",
+  "facturacion": "corporativa",
+  "cnae": "2932"
+ },
+ {
+  "pos": 136,
+  "nombre": "ELECTRONICA CERLER, SA",
+  "facturacion": "62.227.374",
+  "cnae": "2640"
+ },
+ {
+  "pos": 137,
+  "nombre": "PROFESIONALES DE LA CARNE SL",
+  "facturacion": "corporativa",
+  "cnae": "4632"
+ },
+ {
+  "pos": 138,
+  "nombre": "TRENDICO GROUP SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "4649"
+ },
+ {
+  "pos": 139,
+  "nombre": "COMPAÑIA DE OBRAS PUBLICAS HORMIGONES Y ASFALTOS SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "4102"
+ },
+ {
+  "pos": 140,
+  "nombre": "LINAMAR LIGHT METALS ZARAGOZA SA.",
+  "facturacion": "58.819.582",
+  "cnae": "2454"
+ },
+ {
+  "pos": 141,
+  "nombre": "EXPLOTACIONES BAJO ARAGON SL",
+  "facturacion": "corporativa",
+  "cnae": "0146"
+ },
+ {
+  "pos": 142,
+  "nombre": "PROMA HISPANIA SA",
+  "facturacion": "corporativa",
+  "cnae": "2932"
+ },
+ {
+  "pos": 143,
+  "nombre": "ARQUITECTURA INGENIERIA Y CONSTRUCCION LOBE SA.",
+  "facturacion": "corporativa",
+  "cnae": "6812"
+ },
+ {
+  "pos": 144,
+  "nombre": "INSTRUMENTACION Y COMPONENTES SA",
+  "facturacion": "corporativa",
+  "cnae": "6290"
+ },
+ {
+  "pos": 145,
+  "nombre": "OVIARAGON S.C.L.",
+  "facturacion": "54.295.342",
+  "cnae": "0145"
+ },
+ {
+  "pos": 146,
+  "nombre": "ARTAL VEHICULOS ZARAGOZA SL",
+  "facturacion": "corporativa",
+  "cnae": "4781"
+ },
+ {
+  "pos": 147,
+  "nombre": "AUGUSTA ARAGON SA",
+  "facturacion": "corporativa",
+  "cnae": "4781"
+ },
+ {
+  "pos": 148,
+  "nombre": "MOLINOS DEL EBRO SA",
+  "facturacion": "corporativa",
+  "cnae": "3512"
+ },
+ {
+  "pos": 149,
+  "nombre": "JORGE PORK MEAT SLU",
+  "facturacion": "corporativa",
+  "cnae": "6820"
+ },
+ {
+  "pos": 150,
+  "nombre": "BRILEN TECH SA",
+  "facturacion": "53.761.994",
+  "cnae": "2060"
+ },
+ {
+  "pos": 151,
+  "nombre": "VALENTO TEXTILE SL.",
+  "facturacion": "corporativa",
+  "cnae": "4642"
+ },
+ {
+  "pos": 152,
+  "nombre": "GLOBAL SPEDITION SL",
+  "facturacion": "corporativa",
+  "cnae": "4941"
+ },
+ {
+  "pos": 153,
+  "nombre": "KDK-DONGKOOK AUTOMOTIVE SPAIN SA",
+  "facturacion": "corporativa",
+  "cnae": "2932"
+ },
+ {
+  "pos": 154,
+  "nombre": "ZALUX SA",
+  "facturacion": "53.083.189",
+  "cnae": "2740"
+ },
+ {
+  "pos": 155,
+  "nombre": "HIBERUS TECNOLOGIAS DE LA INFORMACION SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "6290"
+ },
+ {
+  "pos": 156,
+  "nombre": "INSONORIZANTES PELZER SA",
+  "facturacion": "corporativa",
+  "cnae": "2932"
+ },
+ {
+  "pos": 157,
+  "nombre": "OPEL EUROPE HOLDINGS SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "6421"
+ },
+ {
+  "pos": 158,
+  "nombre": "IDE ELECTRIC SL.",
+  "facturacion": "corporativa",
+  "cnae": "2790"
+ },
+ {
+  "pos": 159,
+  "nombre": "ITESAL SL",
+  "facturacion": "corporativa",
+  "cnae": "2442"
+ },
+ {
+  "pos": 160,
+  "nombre": "CONTAZARA SA.",
+  "facturacion": "50.293.541",
+  "cnae": "2651"
+ },
+ {
+  "pos": 161,
+  "nombre": "MULTIANAU SL",
+  "facturacion": "50.129.328",
+  "cnae": "8123"
+ },
+ {
+  "pos": 162,
+  "nombre": "MAETEL INSTALACIONES Y SERVICIOS INDUSTRIALES SAU",
+  "facturacion": "49.847.812",
+  "cnae": "4222"
+ },
+ {
+  "pos": 163,
+  "nombre": "CABLENA SA",
+  "facturacion": "corporativa",
+  "cnae": "2732"
+ },
+ {
+  "pos": 164,
+  "nombre": "BM SPORTECH IB SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "4649"
+ },
+ {
+  "pos": 165,
+  "nombre": "BRILEN SA",
+  "facturacion": "49.300.124",
+  "cnae": "2060"
+ },
+ {
+  "pos": 166,
+  "nombre": "CARVISA CONTAINER SOCIEDAD LIMITADA.",
+  "facturacion": "48.287.927",
+  "cnae": "2522"
+ },
+ {
+  "pos": 167,
+  "nombre": "INTERLAZARO SL",
+  "facturacion": "corporativa",
+  "cnae": "4631"
+ },
+ {
+  "pos": 168,
+  "nombre": "INGENIERIA Y APLICACIONES SOLARES ZARAGOZA 2005 SL",
+  "facturacion": "corporativa",
+  "cnae": "4321"
+ },
+ {
+  "pos": 169,
+  "nombre": "ADIEGO HERMANOS SA",
+  "facturacion": "corporativa",
+  "cnae": "4685"
+ },
+ {
+  "pos": 170,
+  "nombre": "FRUTARIA MARKETS MADRID SA.",
+  "facturacion": "corporativa",
+  "cnae": "4631"
+ },
+ {
+  "pos": 171,
+  "nombre": "ITALPANNELLI SA.",
+  "facturacion": "corporativa",
+  "cnae": "2513"
+ },
+ {
+  "pos": 172,
+  "nombre": "SOCIEDAD ANONIMA DE MINERIA Y TECNOLOGIA DE ARCILLAS",
+  "facturacion": "46.439.624",
+  "cnae": "0812"
+ },
+ {
+  "pos": 173,
+  "nombre": "COMERCIAL SALGAR SL",
+  "facturacion": "46.298.917",
+  "cnae": "1628"
+ },
+ {
+  "pos": 174,
+  "nombre": "GRUPO LOGISTICO SESE SL",
+  "facturacion": "corporativa",
+  "cnae": "6421"
+ },
+ {
+  "pos": 175,
+  "nombre": "TUBOS PERFILADOS SA",
+  "facturacion": "corporativa",
+  "cnae": "2221"
+ },
+ {
+  "pos": 176,
+  "nombre": "TELTRONIC SAU",
+  "facturacion": "46.072.000",
+  "cnae": "2630"
+ },
+ {
+  "pos": 177,
+  "nombre": "SAICA FLEXIBLE SAU",
+  "facturacion": "corporativa",
+  "cnae": "2222"
+ },
+ {
+  "pos": 178,
+  "nombre": "ADLER PELZER SPAIN SL.",
+  "facturacion": "corporativa",
+  "cnae": "2932"
+ },
+ {
+  "pos": 179,
+  "nombre": "SERVICIOS RENOVADOS DE ALIMENTACION SAU",
+  "facturacion": "44.542.000",
+  "cnae": "5621"
+ },
+ {
+  "pos": 180,
+  "nombre": "PROMOCIONES ARAOPESA SL",
+  "facturacion": "corporativa",
+  "cnae": "6812"
+ },
+ {
+  "pos": 181,
+  "nombre": "BUSINESS TELECOMMUNICATIONS SERVICES EUROPE SA.",
+  "facturacion": "corporativa",
+  "cnae": "6190"
+ },
+ {
+  "pos": 182,
+  "nombre": "KETER IBERIA SOCIEDAD LIMITADA.",
+  "facturacion": "44.009.737",
+  "cnae": "4686"
+ },
+ {
+  "pos": 183,
+  "nombre": "ARALOGIC SL",
+  "facturacion": "corporativa",
+  "cnae": "4941"
+ },
+ {
+  "pos": 184,
+  "nombre": "ROLABO OUTSOURCING S.L.",
+  "facturacion": "corporativa",
+  "cnae": "2110"
+ },
+ {
+  "pos": 185,
+  "nombre": "DISTRIBUCIONES RODRIGO SA",
+  "facturacion": "corporativa",
+  "cnae": "4639"
+ },
+ {
+  "pos": 186,
+  "nombre": "ZOILO RIOS SA",
+  "facturacion": "corporativa",
+  "cnae": "4730"
+ },
+ {
+  "pos": 187,
+  "nombre": "MONCAYO AGRICOLA SOCIEDAD LIMITADA",
+  "facturacion": "corporativa",
+  "cnae": "4621"
+ },
+ {
+  "pos": 188,
+  "nombre": "INDUSTRIAS LOPEZ SORIANO, S.L.",
+  "facturacion": "corporativa",
+  "cnae": "4682"
+ },
+ {
+  "pos": 189,
+  "nombre": "NTT DATA SPAIN SOLUCIONES TECNOLOGICAS SL.",
+  "facturacion": "corporativa",
+  "cnae": "6290"
+ },
+ {
+  "pos": 190,
+  "nombre": "DESARROLLO AGRICOLA Y MINERO SA",
+  "facturacion": "corporativa",
+  "cnae": "2015"
+ },
+ {
+  "pos": 191,
+  "nombre": "GRUPO DELIFACTORY SL.",
+  "facturacion": "corporativa",
+  "cnae": "1054"
+ },
+ {
+  "pos": 192,
+  "nombre": "AUTOSALDUBA SA",
+  "facturacion": "corporativa",
+  "cnae": "4781"
+ },
+ {
+  "pos": 193,
+  "nombre": "ÑAMING SOCIEDAD LIMITADA UNIPERSONAL.",
+  "facturacion": "corporativa",
+  "cnae": "1085"
+ },
+ {
+  "pos": 194,
+  "nombre": "COOP AGRICOLA ARAGONESA DEL EBRO",
+  "facturacion": "corporativa",
+  "cnae": "1091"
+ },
+ {
+  "pos": 195,
+  "nombre": "OLEOHIDRAULICA FERRUZ SA",
+  "facturacion": "40.658.458",
+  "cnae": "2812"
+ },
+ {
+  "pos": 196,
+  "nombre": "AGROPECUARIA DEL VALLE DEL EBRO S.COOP.",
+  "facturacion": "corporativa",
+  "cnae": "1091"
+ },
+ {
+  "pos": 197,
+  "nombre": "ESPADESA RETAIL SOCIEDAD LIMITADA.",
+  "facturacion": "corporativa",
+  "cnae": "3100"
+ },
+ {
+  "pos": 198,
+  "nombre": "DIAGNOSTICA LONGWOOD SL",
+  "facturacion": "corporativa",
+  "cnae": "4646"
+ },
+ {
+  "pos": 199,
+  "nombre": "SERVICIOS LOGISTICOS MARTORELL SIGLO XXI SL",
+  "facturacion": "corporativa",
+  "cnae": "4941"
+ },
+ {
+  "pos": 200,
+  "nombre": "CERTEST BIOTEC SL",
+  "facturacion": "corporativa",
+  "cnae": "2120"
+ }
+]
