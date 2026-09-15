@@ -5,6 +5,7 @@ Ranking de Empresas*.pdf
 # Copias de seguridad locales previas a edición
 backups/
 
-# Estado de contactos LinkedIn (privado, no se publica)
-empresas_solicitadas.json
+# Seguimiento de contactos LinkedIn: la tabla y el script (con nombres de personas
+# y rutas locales) NO se publican. La lista de POSICIONES de empresa solicitadas
+# (empresas_solicitadas.json) SÍ se publica para pintar los halos rojos en la web.
 gen_solicitadas.py
