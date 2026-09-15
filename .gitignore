@@ -4,3 +4,7 @@ FB_Municipios_DPZ_Piloto_20.pdf
 Ranking de Empresas*.pdf
 # Copias de seguridad locales previas a edición
 backups/
+
+# Estado de contactos LinkedIn (privado, no se publica)
+empresas_solicitadas.json
+gen_solicitadas.py

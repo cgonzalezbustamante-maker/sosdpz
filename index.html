@@ -96,6 +96,8 @@
   .emp-mark{width:14px;height:14px;border-radius:50%;background:#0097b2;
      border:2.5px solid #fff;box-shadow:0 0 0 1.6px #013038,0 2px 5px #0008;cursor:pointer}
   .emp-mark:hover{transform:scale(1.25)}
+  /* Empresa ya solicitada en LinkedIn: halo ROJO en vez de blanco. */
+  .emp-mark.solicitada{border-color:#e00000;box-shadow:0 0 0 1.8px #6a0000,0 2px 6px #0009}
   .emp-tip{font-family:inherit;font-size:12px}
   .emp-tip b{color:#045b6e}
   .totales{margin-top:14px;padding:10px;background:#fff5e0;border:1.5px solid var(--oro);border-radius:6px;font-size:12px}
@@ -313,8 +315,13 @@ map.createPane('empresasPane'); map.getPane('empresasPane').style.zIndex = 655;
 const capaEmpresas = L.layerGroup().addTo(map);
 let EMPRESAS = null;            // [{nombre, municipio, ubicacion, pos}]
 let mostrarEmpresas = false;
+// Empresas ya solicitadas en LinkedIn (fichero LOCAL y privado; si no existe —p.ej.
+// en el sitio público— la lista queda vacía y todas las marcas van con halo blanco).
+let SOLICITADAS = new Set();
 fetch('empresas_marcas.json',{cache:'no-store'}).then(r=>r.json())
   .then(d=>{ EMPRESAS = d; renderEmpresas(); }).catch(()=>{ EMPRESAS = []; });
+fetch('empresas_solicitadas.json',{cache:'no-store'}).then(r=>r.json())
+  .then(d=>{ SOLICITADAS = new Set(d); renderEmpresas(); }).catch(()=>{});
 let _munEnfocado = null;
 // Estado de la línea de unión popup↔mun para poder redibujarla dinámicamente
 // cuando cambia el zoom o el usuario mueve el mapa (así la línea "vive" pegada
@@ -551,7 +558,7 @@ function renderEmpresas(){
         (e.ubicacion?'<br><span style="font-size:11px;color:#777">'+e.ubicacion+'</span>':'');
       L.marker([lat,lon],{
         pane:'empresasPane', zIndexOffset:3000,
-        icon:L.divIcon({className:'', iconSize:[19,19], iconAnchor:[9,9], html:'<div class="emp-mark"></div>'})
+        icon:L.divIcon({className:'', iconSize:[19,19], iconAnchor:[9,9], html:'<div class="emp-mark'+(SOLICITADAS.has(e.pos)?' solicitada':'')+'"></div>'})
       }).bindTooltip(tip,{direction:'top',offset:[0,-9],className:'emp-tip',sticky:true})
         .on('click', ()=>focoMun(mun, e.nombre))
         .addTo(capaEmpresas);
