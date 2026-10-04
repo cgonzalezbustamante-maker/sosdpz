@@ -1,0 +1,8 @@
+name = "sosdpz"
+pages_build_output_dir = "_deploy"
+compatibility_date = "2024-09-01"
+
+# Almacén del estado publicado (dotación + fecha) que lee/escribe /api/estado.
+[[kv_namespaces]]
+binding = "ESTADO"
+id = "e5837f6e8a87401692018c329f88ef4d"

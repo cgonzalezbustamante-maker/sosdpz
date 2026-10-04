@@ -239,6 +239,53 @@
     text-transform:uppercase;box-shadow:0 0 0 3.5px #ffdd00}
   .zona-cartel .tot{margin-top:8px;font-size:18px;color:#111;font-weight:800}
   .zona-cartel .tot b{color:var(--rojo);font-size:21px}
+  /* ── Botón PUBLICAR (solo modo edición) ── */
+  #btn-publicar{position:absolute;top:12px;left:12px;z-index:1600;background:var(--rojo);color:#fff;
+    border:2px solid #fff;border-radius:9px;padding:9px 15px;font-weight:800;font-size:13px;cursor:pointer;
+    box-shadow:0 3px 9px #0007;display:flex;align-items:center;gap:6px}
+  #btn-publicar:hover{background:#8f1218}
+  body.visor #btn-publicar{display:none}
+  /* ── Modo VISOR (solo lectura): sin panel lateral, mapa a pantalla completa ── */
+  body.visor aside, body.visor #toggle-panel{display:none !important}
+  body.visor #map-wrap{flex:1;width:100vw;height:100vh;min-height:100vh}
+  /* Buscador de municipios del visor (arriba-centro) */
+  #visor-buscador{position:absolute;top:12px;left:50%;transform:translateX(-50%);z-index:1500;
+    width:min(92vw,430px);display:none}
+  body.visor #visor-buscador{display:block}
+  #visor-buscador .vb-inp{width:100%;box-sizing:border-box;padding:11px 14px;border:2px solid var(--rojo);
+    border-radius:10px;font-size:15px;font-weight:700;color:var(--tinta);background:#fff;
+    box-shadow:0 3px 10px #0006;outline:none;font-family:inherit}
+  #visor-buscador .vb-inp::placeholder{color:#9a8f7c;font-weight:600}
+  #visor-buscador .vb-res{margin-top:4px;background:#fff;border:1.5px solid var(--tinta);border-radius:10px;
+    box-shadow:0 6px 18px #0007;max-height:46vh;overflow-y:auto;display:none}
+  #visor-buscador .vb-res.on{display:block}
+  #visor-buscador .vb-item{padding:9px 13px;font-size:14px;font-weight:600;color:var(--tinta);cursor:pointer;
+    border-bottom:1px solid #eee;display:flex;justify-content:space-between;gap:8px;align-items:center}
+  #visor-buscador .vb-item:last-child{border-bottom:none}
+  #visor-buscador .vb-item:hover,#visor-buscador .vb-item.sel{background:#fbeeea}
+  #visor-buscador .vb-item .vb-t{font-size:11px;font-weight:800;padding:1px 6px;border-radius:5px;color:#fff;white-space:nowrap}
+  /* Fecha de publicación (abajo-izquierda) */
+  #visor-fecha{position:absolute;bottom:10px;left:10px;z-index:1500;background:#fff;border:1.5px solid var(--tinta);
+    border-radius:7px;padding:5px 11px;font-size:11.5px;font-weight:700;color:#333;box-shadow:0 2px 7px #0006;display:none}
+  body.visor #visor-fecha{display:block}
+  #visor-fecha b{color:var(--rojo)}
+  /* ── Modal de PUBLICAR ── */
+  #pub-ov{position:fixed;inset:0;z-index:3000;background:rgba(20,8,6,.6);display:none;align-items:center;
+    justify-content:center;padding:16px}
+  #pub-ov.on{display:flex}
+  #pub-card{background:var(--papel,#f4f1ea);border:2px solid var(--oro,#c9a24b);border-radius:16px;max-width:430px;
+    width:100%;box-shadow:0 18px 54px #000a;padding:18px 20px;color:var(--tinta,#1a1a1a);max-height:92vh;overflow-y:auto;position:relative}
+  #pub-card h3{margin:0 0 4px;font-size:20px;color:var(--rojo)}
+  #pub-card .pub-sub{font-size:12px;color:#6a5f4c;margin-bottom:12px}
+  #pub-card .pub-qr{display:flex;justify-content:center;margin:12px 0;background:#fff;border-radius:10px;padding:12px}
+  #pub-card .pub-qr img,#pub-card .pub-qr canvas{display:block}
+  #pub-url{width:100%;box-sizing:border-box;padding:9px 11px;border:1.5px solid var(--tinta);border-radius:8px;
+    font-size:12px;font-family:monospace;background:#fff;color:#333;word-break:break-all}
+  #pub-card .pub-btns{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  #pub-card .pub-btns button{flex:1;min-width:120px;padding:10px;border-radius:9px;border:2px solid var(--tinta);
+    background:#fff;color:var(--tinta);font-weight:800;font-size:13px;cursor:pointer}
+  #pub-card .pub-btns button.prim{background:var(--rojo);color:#fff;border-color:var(--rojo)}
+  #pub-card .pub-x{position:absolute;top:8px;right:12px;background:none;border:0;font-size:26px;color:#6a5f4c;cursor:pointer;line-height:1}
 </style>
 </head>
 <body>
@@ -267,6 +314,12 @@
   </aside>
   <div id="map-wrap">
     <div id="map"></div>
+    <button id="btn-publicar" onclick="publicar()" title="Publicar el estado actual como enlace de solo lectura">🔗 Publicar</button>
+    <div id="visor-buscador">
+      <input id="vb-inp" class="vb-inp" type="text" placeholder="🔍 Buscar municipio…" autocomplete="off" oninput="_buscarMun(this.value)" onfocus="_buscarMun(this.value)">
+      <div id="vb-res" class="vb-res"></div>
+    </div>
+    <div id="visor-fecha"></div>
     <div id="legend-map">
       <div class="titulo">TIEMPO DE LLEGADA</div>
       <div class="fila"><span class="caja" style="background:var(--v)"></span>0 – 15 min</div>
@@ -277,6 +330,23 @@
     </div>
   </div>
 </div>
+<!-- Modal de publicación (solo modo edición) -->
+<div id="pub-ov">
+  <div id="pub-card">
+    <button class="pub-x" onclick="_cerrarPublicar()" aria-label="Cerrar">&times;</button>
+    <h3>🔗 Publicar mapa</h3>
+    <div class="pub-sub">Enlace <b>fijo</b> de solo consulta. Al publicar, este mismo enlace/QR pasa a mostrar el estado actual de cobertura. Cualquiera puede verlo; nadie puede modificarlo.</div>
+    <div id="pub-status" style="font-size:12.5px;margin-bottom:8px;min-height:18px"></div>
+    <div class="pub-qr" id="pub-qr"></div>
+    <input id="pub-url" readonly onclick="this.select()">
+    <div class="pub-btns">
+      <button class="prim" onclick="_hacerPublicar()">🔄 Volver a publicar</button>
+      <button onclick="_copiarPubUrl()">📋 Copiar enlace</button>
+      <button onclick="_descargarQR()">⬇ Descargar QR</button>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <script>
 // ─── Datos y estado ────────────────────────────────────────────
 let DATOS = null;
@@ -292,6 +362,27 @@ const PARQUE_COLOR = {
   'Caspe':'#d35400','La Almunia de Doña Godina':'#c0392b','Tauste':'#27ae60',
   'Daroca':'#f39c12','Cariñena':'#7f8c8d','El Burgo de Ebro':'#e67e22'
 };
+
+// ─── Modo VISOR (enlace público de solo lectura) ───────────────
+// El enlace público FIJO se sirve desde Cloudflare Pages (URL limpia, sin usuario).
+// El estado publicado (dotación + fecha) se guarda/lee en Cloudflare KV vía la
+// función /api/estado, de modo que el MISMO enlace muestra siempre lo último.
+const VIEW_BASE='https://sosdpz.pages.dev/';
+const API_ESTADO='https://sosdpz.pages.dev/api/estado';
+// Orden FIJO de parques para serializar la dotación de forma compacta.
+const PARQUE_ORDER=['Tarazona','Calatayud','Ejea de los Caballeros','Caspe','La Almunia de Doña Godina','Tauste','Daroca','Cariñena','El Burgo de Ebro'];
+let VISOR=false, VISOR_FECHA_TXT=null;
+(function(){
+  const sp=new URLSearchParams(location.search);
+  const host=location.hostname;
+  const esGithub=/\.github\.io$/i.test(host);
+  const esLocal=/^(localhost|127\.|0\.0\.0\.0|\[)/.test(host) || host==='';
+  // EDICIÓN: github.io (fuente versionada), local (pruebas) o ?edit. Para
+  // previsualizar el visor en local se puede usar ?visor.
+  const edit = sp.has('edit') || ((esGithub||esLocal) && !sp.has('visor'));
+  VISOR = !edit;
+  if(VISOR){ modo='tiempos'; try{ document.body.classList.add('visor'); }catch(e){} }
+})();
 
 // ─── Mapa Leaflet ──────────────────────────────────────────────
 const map = L.map('map',{
@@ -318,10 +409,13 @@ let mostrarEmpresas = false;
 // Empresas ya solicitadas en LinkedIn (fichero LOCAL y privado; si no existe —p.ej.
 // en el sitio público— la lista queda vacía y todas las marcas van con halo blanco).
 let SOLICITADAS = new Set();
-fetch('empresas_marcas.json',{cache:'no-store'}).then(r=>r.json())
-  .then(d=>{ EMPRESAS = d; renderEmpresas(); }).catch(()=>{ EMPRESAS = []; });
-fetch('empresas_solicitadas.json',{cache:'no-store'}).then(r=>r.json())
-  .then(d=>{ SOLICITADAS = new Set(d); renderEmpresas(); }).catch(()=>{});
+// Las empresas solo se usan en modo EDICIÓN; en el visor público no se cargan.
+if(!VISOR){
+  fetch('empresas_marcas.json',{cache:'no-store'}).then(r=>r.json())
+    .then(d=>{ EMPRESAS = d; renderEmpresas(); }).catch(()=>{ EMPRESAS = []; });
+  fetch('empresas_solicitadas.json',{cache:'no-store'}).then(r=>r.json())
+    .then(d=>{ SOLICITADAS = new Set(d); renderEmpresas(); }).catch(()=>{});
+}
 let _munEnfocado = null;
 // Estado de la línea de unión popup↔mun para poder redibujarla dinámicamente
 // cuando cambia el zoom o el usuario mueve el mapa (así la línea "vive" pegada
@@ -649,6 +743,9 @@ function focoMun(mun, empresa){
   const mv = DATOS.muns[mun];
   if(!mv || !mv.parques || !mv.parques.length){ return; }
   _munEnfocado = mun;
+  // En el visor: ocultar el buscador mientras se muestra el panel del municipio
+  // (para que no se solapen arriba). Se restaura al cerrar (limpiarFoco).
+  if(VISOR){ const _vb=document.getElementById('visor-buscador'); if(_vb) _vb.style.display='none'; }
   capaFoco.clearLayers();
 
   // 1) Contorno del mun: tres capas superpuestas:
@@ -848,6 +945,8 @@ function focoMun(mun, empresa){
 
 function limpiarFoco(){
   _munEnfocado = null;
+  // Restaurar el buscador del visor al cerrar el panel del municipio.
+  if(VISOR){ const _vb=document.getElementById('visor-buscador'); if(_vb){ _vb.style.display=''; const _i=document.getElementById('vb-inp'); if(_i) _i.value=''; } }
   _focoCfg = null;
   _focoLineaHalo = _focoLineaBody = _focoPunto = null;
   _focoPopup = null;
@@ -1372,18 +1471,129 @@ function initDragLeyenda(){
 }
 
 // ─── Arranque ──────────────────────────────────────────────────
-fetch('datos_operativos.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
+// ─── PUBLICAR: actualiza el estado del enlace FIJO (KV) + QR ────
+function _hoyISO(){ const d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function _fmtFecha(iso){ if(!iso||iso.length<10) return iso||''; return iso.slice(8,10)+'/'+iso.slice(5,7)+'/'+iso.slice(0,4); }
+function _renderQR(url){
+  const cont=document.getElementById('pub-qr'); cont.innerHTML='';
+  try{
+    if(typeof QRCode!=='undefined'){ new QRCode(cont,{text:url,width:208,height:208,correctLevel:QRCode.CorrectLevel.M}); }
+    else{ cont.innerHTML='<div style="font-size:12px;color:#c0392b">No se pudo cargar el generador de QR.</div>'; }
+  }catch(e){ cont.innerHTML='<div style="font-size:12px;color:#c0392b">QR no disponible: '+e.message+'</div>'; }
+}
+// Abre el modal (enlace FIJO + QR) y publica el estado actual.
+async function publicar(){
+  document.getElementById('pub-url').value=VIEW_BASE;
+  _renderQR(VIEW_BASE);
+  document.getElementById('pub-ov').classList.add('on');
+  await _hacerPublicar();
+}
+async function _hacerPublicar(){
+  const st=document.getElementById('pub-status');
+  let key=''; try{ key=localStorage.getItem('sosdpz_pubkey')||''; }catch(e){}
+  if(!key){
+    key=(prompt('Clave de publicación del equipo (solo la primera vez en este dispositivo):')||'').trim();
+    if(!key){ if(st) st.innerHTML='<span style="color:#c0392b">Publicación cancelada.</span>'; return; }
+    try{ localStorage.setItem('sosdpz_pubkey',key); }catch(e){}
+  }
+  if(st) st.innerHTML='⏳ Publicando…';
+  const payload={ b:PARQUE_ORDER.map(p=>bomberos[p]||0), d:_hoyISO() };
+  try{
+    const r=await fetch(API_ESTADO,{method:'POST',headers:{'Content-Type':'application/json','X-Pub-Key':key},body:JSON.stringify(payload)});
+    if(r.status===403){ try{localStorage.removeItem('sosdpz_pubkey');}catch(e){} if(st) st.innerHTML='<span style="color:#c0392b">❌ Clave incorrecta. Vuelve a pulsar «Publicar ahora» e introdúcela de nuevo.</span>'; return; }
+    if(!r.ok){ if(st) st.innerHTML='<span style="color:#c0392b">❌ Error al publicar ('+r.status+').</span>'; return; }
+    await r.json();
+    if(st) st.innerHTML='<span style="color:#1e7a33;font-weight:800">✓ Publicado el '+_fmtFecha(payload.d)+'. Este enlace ya muestra el estado actual.</span>';
+  }catch(e){ if(st) st.innerHTML='<span style="color:#c0392b">❌ Error de red: '+e.message+'</span>'; }
+}
+function _cerrarPublicar(){ document.getElementById('pub-ov').classList.remove('on'); }
+function _flashBtn(orig,txt){ const b=[...document.querySelectorAll('#pub-card .pub-btns button')].find(x=>x.textContent===orig); if(b){ b.textContent=txt; setTimeout(()=>{b.textContent=orig;},1500);} }
+function _copiarPubUrl(){
+  const i=document.getElementById('pub-url'); i.select(); i.setSelectionRange(0,99999);
+  const ok=()=>_flashBtn('📋 Copiar enlace','✓ Copiado');
+  if(navigator.clipboard){ navigator.clipboard.writeText(i.value).then(ok).catch(()=>{try{document.execCommand('copy');ok();}catch(e){}}); }
+  else { try{document.execCommand('copy');ok();}catch(e){} }
+}
+function _descargarQR(){
+  const cont=document.getElementById('pub-qr');
+  const cv=cont.querySelector('canvas'), im=cont.querySelector('img');
+  const data = cv ? cv.toDataURL('image/png') : (im && im.src ? im.src : null);
+  if(!data) return;
+  const a=document.createElement('a'); a.href=data; a.download='sosdpz_qr.png'; document.body.appendChild(a); a.click(); a.remove();
+}
+// Cerrar modal al pulsar el fondo
+document.addEventListener('click',function(e){ if(e.target && e.target.id==='pub-ov') _cerrarPublicar(); });
+
+// ─── BUSCADOR de municipios (modo visor) ───────────────────────
+function _normMun(s){ return String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,''); }
+function _buscarMun(q){
+  const res=document.getElementById('vb-res'); if(!res||!DATOS) return;
+  const nq=_normMun(q).trim();
+  if(!nq){ res.classList.remove('on'); res.innerHTML=''; return; }
+  const muns=Object.keys(DATOS.muns).filter(m=>_normMun(m).includes(nq)).sort((a,b)=>{
+    const an=_normMun(a).startsWith(nq)?0:1, bn=_normMun(b).startsWith(nq)?0:1;
+    return an-bn || a.localeCompare(b,'es');
+  }).slice(0,30);
+  if(!muns.length){ res.innerHTML='<div class="vb-item" style="cursor:default;color:#999">Sin resultados</div>'; res.classList.add('on'); return; }
+  res.innerHTML=muns.map(m=>{
+    const asig=parqueAsignado(m);
+    const col=asig?colorTiempo(asig.min):'#7f8c8d';
+    const tt=asig?(asig.min.toFixed(0)+' min'):'sin cob.';
+    return '<div class="vb-item" onclick="_seleccionarMunVisor(&quot;'+m.replace(/"/g,'&quot;')+'&quot;)"><span>'+m+'</span><span class="vb-t" style="background:'+col+'">'+tt+'</span></div>';
+  }).join('');
+  res.classList.add('on');
+}
+function _seleccionarMunVisor(mun){
+  const res=document.getElementById('vb-res'); if(res) res.classList.remove('on');
+  const inp=document.getElementById('vb-inp'); if(inp){ inp.value=mun; inp.blur(); }
+  if(DATOS && DATOS.muns[mun]) focoMun(mun);
+}
+document.addEventListener('click',function(e){
+  const bus=document.getElementById('visor-buscador');
+  if(bus && !bus.contains(e.target)){ const r=document.getElementById('vb-res'); if(r) r.classList.remove('on'); }
+});
+// Lee el estado publicado (dotación + fecha) desde KV vía /api/estado.
+async function _cargarEstadoPublicado(){
+  try{
+    const r=await fetch(API_ESTADO,{cache:'no-store'});
+    if(r.ok){
+      const j=await r.json();
+      if(j && Array.isArray(j.b) && j.b.length===PARQUE_ORDER.length){
+        const b={}; PARQUE_ORDER.forEach((p,i)=>{ b[p]=Math.max(0,parseInt(j.b[i],10)||0); }); bomberos=b;
+        if(j.d) VISOR_FECHA_TXT=_fmtFecha(j.d);
+      }
+    }
+  }catch(e){ console.warn('[VISOR] no se pudo cargar el estado publicado',e); }
+}
+function _aplicarVisorFecha(){
+  const f=document.getElementById('visor-fecha');
+  if(f) f.innerHTML = VISOR_FECHA_TXT ? ('Publicado el <b>'+VISOR_FECHA_TXT+'</b>') : 'SOSDPZ · cobertura';
+}
+
+fetch('datos_operativos.json',{cache:'no-store'}).then(r=>r.json()).then(async (d)=>{
   DATOS = d;
+  // En VISOR: cargar el estado publicado (dotación) ANTES de renderizar.
+  if(VISOR){ await _cargarEstadoPublicado(); }
   // Ajustar bounds al conjunto de muns
   const b = L.latLngBounds();
   Object.values(DATOS.muns).forEach(mv=>{
     (mv.poligonos||[]).forEach(poly=>poly.forEach(p=>b.extend(p)));
   });
-  if(b.isValid()) map.fitBounds(b, {padding:[20,20]});
+  // Asegurar que el mapa conoce su tamaño real (en VISOR a pantalla completa se
+  // crea antes del layout → sin esto fitBounds no fija zoom y no se ve nada).
+  try{ map.invalidateSize(false); }catch(e){}
+  // Encuadre inicial: en VISOR se ciñe a la provincia (optimizado para móvil);
+  // en edición, el fit normal con padding.
+  if(b.isValid()) map.fitBounds(b, VISOR ? {padding:[14,14]} : {padding:[20,20]});
+  else map.setView([41.7,-1.1], 8);
   refrescar();
   initDragLeyenda();
-  // En móvil: arrancar con el panel oculto para no tapar el mapa
-  if(window.innerWidth<=768){
+  if(VISOR){
+    _aplicarVisorFecha();
+    // Re-ajustar tras el layout definitivo (por si el contenedor cambió de tamaño).
+    setTimeout(()=>{ try{ map.invalidateSize(false); if(b.isValid()) map.fitBounds(b,{padding:[14,14]}); }catch(e){} }, 200);
+  } else if(window.innerWidth<=768){
+    // En móvil (modo edición): arrancar con el panel oculto para no tapar el mapa
     document.querySelector('aside').classList.add('oculto');
     document.getElementById('app').classList.add('panel-oculto');
     setTimeout(()=>map.invalidateSize(), 200);
