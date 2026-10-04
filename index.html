@@ -52,6 +52,8 @@
   #legend-map:hover{box-shadow:0 3px 12px #0007}
   /* En el visor se baja la leyenda para que no la tape el buscador de municipios. */
   body.visor #legend-map{position:fixed;top:calc(74px + env(safe-area-inset-top,0px));right:10px}
+  /* En el visor se baja el control de zoom (+/-) para que no toque el buscador. */
+  body.visor .leaflet-top.leaflet-left{top:calc(58px + env(safe-area-inset-top,0px))}
   #legend-map .titulo{cursor:move}
   #legend-map .titulo{font-size:12px;font-weight:900;color:var(--rojo);margin-bottom:8px;text-align:center;letter-spacing:.03em}
   #legend-map .fila{display:flex;align-items:center;gap:7px;margin:4px 0}
@@ -300,16 +302,18 @@
   #visor-fecha b{color:var(--rojo);font-size:15px}
   /* Panel de aviso/mensaje del visor: ABAJO, SUBIDO y bien separado de la fecha.
      Se muestra solo en la vista inicial; desaparece al enfocar un municipio. */
-  /* Anclado por ARRIBA: crece y hace scroll HACIA ABAJO según el contenido, sin
-     invadir el mapa. Se detiene antes de la fecha (parte inferior). */
+  /* Anclado por ARRIBA (top/max-height los fija el JS según el borde inferior de
+     la provincia y la fecha): crece y hace scroll VERTICAL hacia abajo según el
+     contenido, sin tocar los bordes del mapa. */
   #visor-msg{position:fixed;top:56vh;top:56dvh;left:50%;transform:translateX(-50%);
-    z-index:1550;width:min(94vw,440px);background:#fff;border:2px solid var(--rojo);border-radius:12px;
+    z-index:1550;width:min(90vw,420px);background:#fff;border:2px solid var(--rojo);border-radius:12px;
     box-shadow:0 6px 18px #0008;overflow:hidden;display:none;
     max-height:calc(44vh - 92px);max-height:calc(44dvh - 92px)}
   #visor-msg .vm-cab{background:var(--rojo);color:#fff;font-weight:800;font-size:13px;
     letter-spacing:.02em;padding:6px 12px}
   #visor-msg .vm-txt{padding:10px 13px;font-size:14.5px;font-weight:600;color:var(--tinta);
-    line-height:1.4;white-space:pre-wrap;overflow-y:auto;max-height:calc(44vh - 126px);max-height:calc(44dvh - 126px)}
+    line-height:1.4;white-space:pre-wrap;word-break:break-word;overflow-wrap:break-word;
+    overflow-x:hidden;overflow-y:auto;max-height:calc(44vh - 126px);max-height:calc(44dvh - 126px)}
   /* Botón "Volver" (solo en visor y con un municipio enfocado) */
   #visor-volver{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));left:12px;z-index:1600;background:var(--rojo);color:#fff;
     border:2px solid #fff;border-radius:9px;padding:9px 15px;font-weight:800;font-size:14px;cursor:pointer;
@@ -808,6 +812,7 @@ function focoMun(mun, empresa){
     const _vb=document.getElementById('visor-buscador'); if(_vb) _vb.style.display='none';
     const _vm=document.getElementById('visor-msg'); if(_vm) _vm.style.display='none';
     const _vf=document.getElementById('visor-fecha'); if(_vf) _vf.style.display='none';
+    const _lg=document.getElementById('legend-map'); if(_lg) _lg.style.display='none';
     const _bv=document.getElementById('visor-volver'); if(_bv) _bv.style.display='flex';
   }
   capaFoco.clearLayers();
@@ -1049,6 +1054,7 @@ function limpiarFoco(){
   if(VISOR){
     const _vb=document.getElementById('visor-buscador'); if(_vb){ _vb.style.display=''; const _i=document.getElementById('vb-inp'); if(_i) _i.value=''; }
     const _vf=document.getElementById('visor-fecha'); if(_vf) _vf.style.display='';
+    const _lg=document.getElementById('legend-map'); if(_lg) _lg.style.display='';
     const _bv=document.getElementById('visor-volver'); if(_bv) _bv.style.display='none';
     _aplicarVisorMsg();
     _fitInicialVisor(true);
@@ -1689,7 +1695,7 @@ function _aplicarVisorFecha(){
 function _aplicarVisorMsg(){
   const el=document.getElementById('visor-msg'); if(!el) return;
   const hay = VISOR && VISOR_MSG_TXT && !_munEnfocado;
-  if(hay){ el.querySelector('.vm-txt').textContent = VISOR_MSG_TXT; el.style.display='block'; }
+  if(hay){ el.querySelector('.vm-txt').textContent = VISOR_MSG_TXT; el.style.display='block'; _posicionarVisorMsg(); }
   else { el.style.display='none'; }
 }
 // Encuadre inicial del VISOR: sesgado hacia ARRIBA (más padding abajo) para que
@@ -1699,11 +1705,34 @@ function _fitInicialVisor(animate){
   if(!_vistaInicial || !_vistaInicial.isValid()) return;
   try{
     map.invalidateSize(false);
-    map.fitBounds(_vistaInicial, {
-      paddingTopLeft:     L.point(16, 56),
-      paddingBottomRight: L.point(16, 178),
-      animate: !!animate
-    });
+    // zoomSnap=0 → el zoom no salta a múltiplos de 0.5, así el ajuste llena el
+    // ancho EXACTO y la provincia toca los bordes laterales.
+    map.options.zoomSnap = 0;
+    // 1) Ajuste MÁXIMO (tocando los bordes laterales).
+    map.fitBounds(_vistaInicial, {padding:[4,4], animate:false});
+    // 2) Subir la provincia: dejar ~46px sobre su borde norte y el resto de hueco
+    //    abajo para el panel de aviso (sin perder zoom).
+    const nY = map.latLngToContainerPoint([_vistaInicial.getNorth(), _vistaInicial.getCenter().lng]).y;
+    const subir = nY - 46;
+    if(Math.abs(subir) > 3) map.panBy([0, subir], {animate:false});
+    _posicionarVisorMsg();
+  }catch(e){}
+}
+// Coloca el panel de aviso justo debajo de la provincia y limita su alto hasta
+// la fecha, para que el blanco crezca con el mensaje y nunca toque mapa/fecha.
+function _posicionarVisorMsg(){
+  const el=document.getElementById('visor-msg'); if(!el || !VISOR) return;
+  try{
+    const sz=map.getSize();
+    const sb = _vistaInicial ? map.latLngToContainerPoint([_vistaInicial.getSouth(), _vistaInicial.getCenter().lng]).y : sz.y*0.6;
+    const fechaEl=document.getElementById('visor-fecha');
+    const fechaTop = fechaEl ? fechaEl.getBoundingClientRect().top : (sz.y - 60);
+    const top = Math.round(Math.min(Math.max(sb + 14, sz.y*0.40), sz.y*0.72));
+    const maxH = Math.max(56, Math.round(fechaTop - 14 - top));
+    el.style.top = top+'px';
+    el.style.bottom = 'auto';
+    el.style.maxHeight = maxH+'px';
+    const txt=el.querySelector('.vm-txt'); if(txt) txt.style.maxHeight = (maxH - 34)+'px';
   }catch(e){}
 }
 
