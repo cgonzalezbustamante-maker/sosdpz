@@ -52,8 +52,8 @@
   #legend-map:hover{box-shadow:0 3px 12px #0007}
   /* En el visor se baja la leyenda para que no la tape el buscador de municipios. */
   body.visor #legend-map{position:fixed;top:calc(74px + env(safe-area-inset-top,0px));right:10px}
-  /* En el visor se baja el control de zoom (+/-) para que no toque el buscador. */
-  body.visor .leaflet-top.leaflet-left{top:calc(58px + env(safe-area-inset-top,0px))}
+  /* En el visor el control de zoom (+/-) se baja bajo el logo, sin tocar el buscador. */
+  body.visor .leaflet-top.leaflet-left{top:calc(80px + env(safe-area-inset-top,0px))}
   #legend-map .titulo{cursor:move}
   #legend-map .titulo{font-size:12px;font-weight:900;color:var(--rojo);margin-bottom:8px;text-align:center;letter-spacing:.03em}
   #legend-map .fila{display:flex;align-items:center;gap:7px;margin:4px 0}
@@ -278,8 +278,13 @@
   body.visor{overflow:hidden;overscroll-behavior:none}
   body.visor #app{height:100vh;height:100dvh;overflow:hidden}
   /* Buscador de municipios del visor (arriba-centro) */
-  #visor-buscador{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:1500;
-    width:min(92vw,430px);display:none}
+  /* Buscador: deja hueco a la izquierda para el logo de reivindicación. */
+  #visor-buscador{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));left:78px;right:10px;z-index:1500;
+    width:auto;max-width:430px;display:none}
+  /* Logo de reivindicación (SOS Bomberos DPZ), arriba-izquierda, sin fondo. */
+  #visor-logo{position:fixed;top:calc(6px + env(safe-area-inset-top,0px));left:6px;z-index:1600;
+    width:64px;height:auto;display:none;pointer-events:none;filter:drop-shadow(0 1px 3px #0006)}
+  body.visor #visor-logo{display:block}
   body.visor #visor-buscador{display:block}
   #visor-buscador .vb-inp{width:100%;box-sizing:border-box;padding:11px 14px;border:2px solid var(--rojo);
     border-radius:10px;font-size:15px;font-weight:700;color:var(--tinta);background:#fff;
@@ -366,6 +371,7 @@
   </aside>
   <div id="map-wrap">
     <div id="map"></div>
+    <img id="visor-logo" src="logo_sos.png" alt="SOS · Bomberos DPZ">
     <button id="btn-publicar" onclick="publicar()" title="Publicar el estado actual como enlace de solo lectura">🔗 Publicar</button>
     <div id="visor-buscador">
       <input id="vb-inp" class="vb-inp" type="text" placeholder="🔍 Buscar municipio…" autocomplete="off" oninput="_buscarMun(this.value)" onfocus="_buscarMun(this.value)">
@@ -813,6 +819,7 @@ function focoMun(mun, empresa){
     const _vm=document.getElementById('visor-msg'); if(_vm) _vm.style.display='none';
     const _vf=document.getElementById('visor-fecha'); if(_vf) _vf.style.display='none';
     const _lg=document.getElementById('legend-map'); if(_lg) _lg.style.display='none';
+    const _lo=document.getElementById('visor-logo'); if(_lo) _lo.style.display='none';
     const _bv=document.getElementById('visor-volver'); if(_bv) _bv.style.display='flex';
   }
   capaFoco.clearLayers();
@@ -1055,6 +1062,7 @@ function limpiarFoco(){
     const _vb=document.getElementById('visor-buscador'); if(_vb){ _vb.style.display=''; const _i=document.getElementById('vb-inp'); if(_i) _i.value=''; }
     const _vf=document.getElementById('visor-fecha'); if(_vf) _vf.style.display='';
     const _lg=document.getElementById('legend-map'); if(_lg) _lg.style.display='';
+    const _lo=document.getElementById('visor-logo'); if(_lo) _lo.style.display='';
     const _bv=document.getElementById('visor-volver'); if(_bv) _bv.style.display='none';
     _aplicarVisorMsg();
     _fitInicialVisor(true);
