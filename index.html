@@ -124,6 +124,7 @@
   .lbl-ur .lbl-parque{transform:translate(6px,calc(-100% - 6px))}   /* arriba-derecha */
   .lbl-ul .lbl-parque{transform:translate(calc(-100% - 6px),calc(-100% - 6px))} /* arriba-izquierda */
   .lbl-ul0 .lbl-parque{transform:translate(-100%,-100%)}                        /* arriba-izq, ESQUINA inf-dcha tocando el punto */
+  .lbl-ur0 .lbl-parque{transform:translate(0,-100%)}                            /* arriba-dcha, ESQUINA inf-izq tocando el punto */
   .lbl-up .lbl-parque{transform:translate(-50%,calc(-100% - 8px))}  /* arriba-centro */
   .lbl-dn .lbl-parque{transform:translate(-50%,8px)}                /* abajo-centro */
   .lbl-rt .lbl-parque{transform:translate(10px,-50%)}               /* a la derecha */
@@ -301,11 +302,11 @@
      Se muestra solo en la vista inicial; desaparece al enfocar un municipio. */
   #visor-msg{position:fixed;bottom:calc(84px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);
     z-index:1550;width:min(94vw,440px);background:#fff;border:2px solid var(--rojo);border-radius:12px;
-    box-shadow:0 6px 18px #0008;overflow:hidden;display:none;max-height:40vh}
+    box-shadow:0 6px 18px #0008;overflow:hidden;display:none;max-height:60vh;max-height:60dvh}
   #visor-msg .vm-cab{background:var(--rojo);color:#fff;font-weight:800;font-size:13px;
     letter-spacing:.02em;padding:6px 12px}
   #visor-msg .vm-txt{padding:10px 13px;font-size:14.5px;font-weight:600;color:var(--tinta);
-    line-height:1.4;white-space:pre-wrap;overflow-y:auto;max-height:calc(40vh - 34px)}
+    line-height:1.4;white-space:pre-wrap;overflow-y:auto;max-height:calc(60vh - 36px);max-height:calc(60dvh - 36px)}
   /* Botón "Volver" (solo en visor y con un municipio enfocado) */
   #visor-volver{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));left:12px;z-index:1600;background:var(--rojo);color:#fff;
     border:2px solid #fff;border-radius:9px;padding:9px 15px;font-weight:800;font-size:14px;cursor:pointer;
@@ -623,7 +624,7 @@ function nombreCorto(p){ return NOMBRE_CORTO[p] || p; }
 // Dirección de la etiqueta respecto al punto del parque (clase CSS .lbl-xx).
 // Elegidas para que los parques cercanos no se pisen.
 const LBL_DIR = {
-  'Calatayud':'ul0', 'La Almunia de Doña Godina':'up', 'Ejea de los Caballeros':'ur',
+  'Calatayud':'ul0', 'La Almunia de Doña Godina':'ur0', 'Ejea de los Caballeros':'ur',
   'Tarazona':'dr', 'El Burgo de Ebro':'ur', 'Tauste':'rt', 'Caspe':'ul', 'Daroca':'dl',
 };
 function renderParques(){
@@ -1047,7 +1048,7 @@ function limpiarFoco(){
     const _vf=document.getElementById('visor-fecha'); if(_vf) _vf.style.display='';
     const _bv=document.getElementById('visor-volver'); if(_bv) _bv.style.display='none';
     _aplicarVisorMsg();
-    if(_vistaInicial){ try{ map.invalidateSize(false); map.fitBounds(_vistaInicial, {padding:[14,14], animate:true}); }catch(e){} }
+    _fitInicialVisor(true);
   }
   _focoCfg = null;
   _focoLineaHalo = _focoLineaBody = _focoPunto = null;
@@ -1688,6 +1689,20 @@ function _aplicarVisorMsg(){
   if(hay){ el.querySelector('.vm-txt').textContent = VISOR_MSG_TXT; el.style.display='block'; }
   else { el.style.display='none'; }
 }
+// Encuadre inicial del VISOR: sesgado hacia ARRIBA (más padding abajo) para que
+// la provincia suba y quede más hueco inferior donde el panel de aviso pueda
+// crecer según el mensaje.
+function _fitInicialVisor(animate){
+  if(!_vistaInicial || !_vistaInicial.isValid()) return;
+  try{
+    map.invalidateSize(false);
+    map.fitBounds(_vistaInicial, {
+      paddingTopLeft:     L.point(16, 56),
+      paddingBottomRight: L.point(16, 178),
+      animate: !!animate
+    });
+  }catch(e){}
+}
 
 fetch('datos_operativos.json',{cache:'no-store'}).then(r=>r.json()).then(async (d)=>{
   DATOS = d;
@@ -1704,7 +1719,7 @@ fetch('datos_operativos.json',{cache:'no-store'}).then(r=>r.json()).then(async (
   try{ map.invalidateSize(false); }catch(e){}
   // Encuadre inicial: en VISOR se ciñe a la provincia (optimizado para móvil);
   // en edición, el fit normal con padding.
-  if(b.isValid()) map.fitBounds(b, VISOR ? {padding:[14,14]} : {padding:[20,20]});
+  if(b.isValid()){ if(VISOR) _fitInicialVisor(false); else map.fitBounds(b,{padding:[20,20]}); }
   else map.setView([41.7,-1.1], 8);
   refrescar();
   initDragLeyenda();
@@ -1712,7 +1727,7 @@ fetch('datos_operativos.json',{cache:'no-store'}).then(r=>r.json()).then(async (
     _aplicarVisorFecha();
     _aplicarVisorMsg();
     // Re-ajustar tras el layout definitivo (por si el contenedor cambió de tamaño).
-    setTimeout(()=>{ try{ map.invalidateSize(false); if(b.isValid()) map.fitBounds(b,{padding:[14,14]}); }catch(e){} }, 200);
+    setTimeout(()=>{ _fitInicialVisor(false); }, 200);
   } else if(window.innerWidth<=768){
     // En móvil (modo edición): arrancar con el panel oculto para no tapar el mapa
     document.querySelector('aside').classList.add('oculto');
