@@ -111,6 +111,20 @@
   .lbl-parque .p-boms{font-size:13px;letter-spacing:1px;margin:0}
   .lbl-parque .p-stat{font-size:10px;color:#111;text-shadow:0 0 3px #fff;font-weight:700}
   .lbl-parque .p-stat b{color:var(--tinta);font-weight:900}
+  /* Colocación de la etiqueta respecto al punto del parque mediante transform
+     (porcentajes relativos al propio tamaño de la etiqueta → INDEPENDIENTE del
+     tamaño del texto; no se descoloca aunque cambie la fuente). El icono se ancla
+     en [0,0] sobre el punto y aquí se desplaza hacia la dirección indicada. */
+  .lbl-wrap{position:relative}
+  .lbl-wrap .lbl-parque{position:absolute;left:0;top:0}
+  .lbl-dr .lbl-parque{transform:translate(6px,6px)}                 /* abajo-derecha (por defecto) */
+  .lbl-dl .lbl-parque{transform:translate(calc(-100% - 6px),6px)}   /* abajo-izquierda */
+  .lbl-ur .lbl-parque{transform:translate(6px,calc(-100% - 6px))}   /* arriba-derecha */
+  .lbl-ul .lbl-parque{transform:translate(calc(-100% - 6px),calc(-100% - 6px))} /* arriba-izquierda */
+  .lbl-up .lbl-parque{transform:translate(-50%,calc(-100% - 8px))}  /* arriba-centro */
+  .lbl-dn .lbl-parque{transform:translate(-50%,8px)}                /* abajo-centro */
+  .lbl-rt .lbl-parque{transform:translate(10px,-50%)}               /* a la derecha */
+  .lbl-lf .lbl-parque{transform:translate(calc(-100% - 10px),-50%)} /* a la izquierda */
   /* Parque cerrado: estilo cinta de precaución (hazard) — máxima visibilidad.
      Fondo amarillo con rayas negras diagonales + borde negro grueso.
      El nombre del parque va en negro sobre banda amarilla, y la palabra
@@ -248,7 +262,10 @@
   body.visor #btn-publicar{display:none}
   /* ── Modo VISOR (solo lectura): sin panel lateral, mapa a pantalla completa ── */
   body.visor aside, body.visor #toggle-panel{display:none !important}
-  body.visor #map-wrap{flex:1;width:100vw;height:100vh;min-height:100vh}
+  /* height:100dvh = altura VISIBLE real del móvil (descuenta la barra del
+     navegador). Sin esto (100vh) el contenedor es más alto que lo visible y el
+     panel inferior / la fecha quedan cortados por debajo. 100vh como fallback. */
+  body.visor #map-wrap{flex:1;width:100vw;height:100vh;height:100dvh;min-height:100vh;min-height:100dvh}
   /* Buscador de municipios del visor (arriba-centro) */
   #visor-buscador{position:absolute;top:12px;left:50%;transform:translateX(-50%);z-index:1500;
     width:min(92vw,430px);display:none}
@@ -265,20 +282,21 @@
   #visor-buscador .vb-item:last-child{border-bottom:none}
   #visor-buscador .vb-item:hover,#visor-buscador .vb-item.sel{background:#fbeeea}
   #visor-buscador .vb-item .vb-t{font-size:11px;font-weight:800;padding:1px 6px;border-radius:5px;color:#fff;white-space:nowrap}
-  /* Fecha de publicación (abajo-izquierda) */
-  #visor-fecha{position:absolute;bottom:10px;left:10px;z-index:1500;background:#fff;border:2px solid var(--tinta);
-    border-radius:9px;padding:8px 15px;font-size:15.5px;font-weight:800;color:#333;box-shadow:0 3px 9px #0006;display:none}
+  /* Fecha de publicación (abajo-izquierda, respetando el área segura del móvil) */
+  #visor-fecha{position:absolute;bottom:calc(10px + env(safe-area-inset-bottom,0px));left:10px;z-index:1500;
+    background:#fff;border:2px solid var(--tinta);border-radius:9px;padding:7px 13px;font-size:14px;font-weight:800;
+    color:#333;box-shadow:0 3px 9px #0006;display:none}
   body.visor #visor-fecha{display:block}
-  #visor-fecha b{color:var(--rojo);font-size:16.5px}
-  /* Panel de aviso/mensaje del visor (debajo del buscador). Se muestra solo en
-     la vista inicial; desaparece al enfocar un municipio. */
-  #visor-msg{position:absolute;top:64px;left:50%;transform:translateX(-50%);z-index:1400;
-    width:min(92vw,430px);background:#fff;border:2px solid var(--rojo);border-radius:11px;
-    box-shadow:0 5px 16px #0007;overflow:hidden;display:none;max-height:42vh}
+  #visor-fecha b{color:var(--rojo);font-size:15px}
+  /* Panel de aviso/mensaje del visor: ABAJO (donde hay más hueco), encima de la
+     fecha. Se muestra solo en la vista inicial; desaparece al enfocar un municipio. */
+  #visor-msg{position:absolute;bottom:calc(52px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);
+    z-index:1550;width:min(94vw,440px);background:#fff;border:2px solid var(--rojo);border-radius:12px;
+    box-shadow:0 6px 18px #0008;overflow:hidden;display:none;max-height:46vh}
   #visor-msg .vm-cab{background:var(--rojo);color:#fff;font-weight:800;font-size:13px;
     letter-spacing:.02em;padding:6px 12px}
   #visor-msg .vm-txt{padding:10px 13px;font-size:14.5px;font-weight:600;color:var(--tinta);
-    line-height:1.4;white-space:pre-wrap;overflow-y:auto;max-height:calc(42vh - 34px)}
+    line-height:1.4;white-space:pre-wrap;overflow-y:auto;max-height:calc(46vh - 34px)}
   /* Botón "Volver" (solo en visor y con un municipio enfocado) */
   #visor-volver{position:absolute;top:12px;left:12px;z-index:1600;background:var(--rojo);color:#fff;
     border:2px solid #fff;border-radius:9px;padding:9px 15px;font-weight:800;font-size:14px;cursor:pointer;
@@ -393,6 +411,7 @@ const API_ESTADO='https://sosdpz.pages.dev/api/estado';
 // Orden FIJO de parques para serializar la dotación de forma compacta.
 const PARQUE_ORDER=['Tarazona','Calatayud','Ejea de los Caballeros','Caspe','La Almunia de Doña Godina','Tauste','Daroca','Cariñena','El Burgo de Ebro'];
 let VISOR=false, VISOR_FECHA_TXT=null, VISOR_MSG_TXT=null;
+let _vistaInicial=null;  // bounds de la provincia (vista al entrar); se restaura al "Volver"
 (function(){
   const sp=new URLSearchParams(location.search);
   const host=location.hostname;
@@ -588,6 +607,16 @@ function renderMuns(){
   });
 }
 
+// Nombre mostrado en la etiqueta del mapa (la clave interna NO cambia: sigue
+// siendo "La Almunia de Doña Godina" en datos/estado/panel).
+const NOMBRE_CORTO = { 'La Almunia de Doña Godina':'La Almunia' };
+function nombreCorto(p){ return NOMBRE_CORTO[p] || p; }
+// Dirección de la etiqueta respecto al punto del parque (clase CSS .lbl-xx).
+// Elegidas para que los parques cercanos no se pisen.
+const LBL_DIR = {
+  'Calatayud':'ur', 'La Almunia de Doña Godina':'up', 'Ejea de los Caballeros':'ur',
+  'Tarazona':'dr', 'El Burgo de Ebro':'ur', 'Tauste':'rt', 'Caspe':'ul', 'Daroca':'dl',
+};
 function renderParques(){
   capaParques.clearLayers();
   capaLbls.clearLayers();
@@ -617,34 +646,23 @@ function renderParques(){
     //  - Cerrado: nombre + sello CERRADO.
     // El detalle de cobertura por parque (muns · km² · hab) vive en el panel
     // lateral (renderPanel), no en la etiqueta del mapa.
+    const nom = nombreCorto(p);
     let cuerpo;
     if(cerrado){
-      cuerpo = '<div class="p-nom">'+p+'</div>'+
+      cuerpo = '<div class="p-nom">'+nom+'</div>'+
                '<div class="p-boms">CERRADO</div>';
     } else {
-      cuerpo = '<div class="p-nom">'+p+'</div>'+
+      cuerpo = '<div class="p-nom">'+nom+'</div>'+
                '<div class="p-dot">🧑‍🚒 '+n+'</div>';
     }
-    // Anchor específico por parque (esquina del icono que coincide con el
-    // punto real del parque). Por defecto va la esquina sup-izq desplazada
-    // 14 px hacia arriba (etiqueta abajo-derecha del círculo).
-    // - Calatayud: esquina inf-derecha coincide con el círculo (etiqueta
-    //   queda arriba-izquierda).
-    // - La Almunia: esquina inf-izquierda coincide con el círculo (etiqueta
-    //   queda arriba-derecha).
-    const ANCHORS = {
-      'Calatayud':                    [110, 78],  // inf-dcha coincide → etiq arriba-izq
-      'La Almunia de Doña Godina':    [56, 78],   // inf-izq desplazada ~1/2 a la izq
-      'Ejea de los Caballeros':       [0, 78],    // inf-izq coincide → etiq arriba-dcha
-      'Tarazona':                     [110, 0],   // sup-dcha coincide → etiq abajo-izq
-      'El Burgo de Ebro':             [0, 78],    // inf-izq coincide → etiq arriba-dcha
-      'Tauste':                       [0, 39],    // mitad-izq coincide → etiq a la dcha
-    };
-    const anchor = ANCHORS[p] || [0, -14];
+    // Anclaje por dirección (transform CSS): el icono se fija en [0,0] sobre el
+    // punto del parque y la clase .lbl-xx desplaza la etiqueta hacia su sitio.
+    // Es independiente del tamaño del texto → no se descoloca al cambiar fuentes.
+    const dir = LBL_DIR[p] || 'dr';
     const clk = (modo==='isocronas');
-    L.marker([pv.lat, pv.lon],{icon:L.divIcon({className:'',
-      html:'<div class="lbl-parque'+(cerrado?' cerrado':'')+(clk?' clk':'')+(_zonaParque===p?' zona-activo':'')+'">'+cuerpo+'</div>',
-      iconSize:null, iconAnchor:anchor}), interactive:clk, zIndexOffset:1000
+    L.marker([pv.lat, pv.lon],{icon:L.divIcon({className:'lbl-wrap lbl-'+dir,
+      html:'<div class="lbl-parque'+(cerrado?' cerrado':'')+(clk?' clk':'')+(_zonaParque===p?' zona-activo':'')+'" data-parque="'+p.replace(/"/g,'&quot;')+'">'+cuerpo+'</div>',
+      iconSize:[0,0], iconAnchor:[0,0]}), interactive:clk, zIndexOffset:1000
     }).on('click', ()=>toggleZonaParque(p)).addTo(capaLbls);
   });
 }
@@ -776,6 +794,7 @@ function focoMun(mun, empresa){
   if(VISOR){
     const _vb=document.getElementById('visor-buscador'); if(_vb) _vb.style.display='none';
     const _vm=document.getElementById('visor-msg'); if(_vm) _vm.style.display='none';
+    const _vf=document.getElementById('visor-fecha'); if(_vf) _vf.style.display='none';
     const _bv=document.getElementById('visor-volver'); if(_bv) _bv.style.display='flex';
   }
   capaFoco.clearLayers();
@@ -843,9 +862,9 @@ function focoMun(mun, empresa){
     const est = f.esAsig
       ? '<span class="p-est asig" style="background:'+colFranja+';color:'+colCubreTxt+'">✓ CUBRE</span>'
       : (f.abierto ? '<span class="p-est ab">abierto</span>' : '<span class="p-est cer">CERRADO</span>');
-    return '<tr class="'+cls+'"><td class="p-nom">'+f.p+'</td><td>'+est+'</td><td class="p-min">'+f.t.toFixed(1)+' min</td></tr>';
+    return '<tr class="'+cls+'"><td class="p-nom">'+nombreCorto(f.p)+'</td><td>'+est+'</td><td class="p-min">'+f.t.toFixed(1)+' min</td></tr>';
   }).join('');
-  const tiempoTxt = asig ? asig.min.toFixed(1)+' min → '+asig.parque : 'SIN COBERTURA';
+  const tiempoTxt = asig ? asig.min.toFixed(1)+' min → '+nombreCorto(asig.parque) : 'SIN COBERTURA';
   // Fondo amarillo (franja 15-35 min) → texto negro para contraste.
   const claro = asig && asig.min > 15 && asig.min <= 35;
   const empBand = empresa ? '<div class="emp-cab">🏭 '+empresa+'</div>' : '';
@@ -884,7 +903,7 @@ function focoMun(mun, empresa){
     // (buscador/leyenda), de modo que el municipio y SUS parques relevantes
     // —el/los cerrados que daban cobertura inicial y el que da la final— caen
     // en la banda libre superior y sus etiquetas quedan visibles.
-    const MARG = 10;                       // margen al borde inferior
+    const MARG = 18;                       // margen al borde inferior (deja aire para el área segura del móvil)
     const topRes = VISOR ? 64 : 92;        // hueco superior (buscador/leyenda/zoom)
     const botRes = popH + MARG + 44;       // franja inferior reservada al panel (+ aire para la etiqueta del parque más cercano)
     let fb = L.latLngBounds(puntosMapa);
@@ -997,8 +1016,7 @@ function focoMun(mun, empresa){
   });
   if(asig){
     document.querySelectorAll('.lbl-parque').forEach(el=>{
-      const nom = el.querySelector('.p-nom');
-      if(nom && nom.textContent.trim() === asig.parque){
+      if(el.dataset.parque === asig.parque){
         el.classList.add('cubre');
         el.style.setProperty('--cub-col', colFranja);
       }
@@ -1013,11 +1031,14 @@ function focoMun(mun, empresa){
 
 function limpiarFoco(){
   _munEnfocado = null;
-  // Restaurar buscador + mensaje y ocultar "Volver" al cerrar el panel del municipio.
+  // Restaurar buscador + mensaje + fecha, ocultar "Volver" y volver al encuadre
+  // inicial (zoom provincia) al cerrar el panel del municipio.
   if(VISOR){
     const _vb=document.getElementById('visor-buscador'); if(_vb){ _vb.style.display=''; const _i=document.getElementById('vb-inp'); if(_i) _i.value=''; }
+    const _vf=document.getElementById('visor-fecha'); if(_vf) _vf.style.display='';
     const _bv=document.getElementById('visor-volver'); if(_bv) _bv.style.display='none';
     _aplicarVisorMsg();
+    if(_vistaInicial){ try{ map.invalidateSize(false); map.fitBounds(_vistaInicial, {padding:[14,14], animate:true}); }catch(e){} }
   }
   _focoCfg = null;
   _focoLineaHalo = _focoLineaBody = _focoPunto = null;
@@ -1342,8 +1363,7 @@ function marcarParqueActivo(){
   document.querySelectorAll('.lbl-parque.zona-activo').forEach(el=>el.classList.remove('zona-activo'));
   if(!_zonaParque) return;
   document.querySelectorAll('.lbl-parque').forEach(el=>{
-    const nom=el.querySelector('.p-nom');
-    if(nom && nom.textContent.trim()===_zonaParque) el.classList.add('zona-activo');
+    if(el.dataset.parque===_zonaParque) el.classList.add('zona-activo');
   });
 }
 // Municipio absorbido: resaltar (opacidad) + cartel hazard con la AMPLIACIÓN de
@@ -1669,6 +1689,7 @@ fetch('datos_operativos.json',{cache:'no-store'}).then(r=>r.json()).then(async (
   Object.values(DATOS.muns).forEach(mv=>{
     (mv.poligonos||[]).forEach(poly=>poly.forEach(p=>b.extend(p)));
   });
+  _vistaInicial = b;   // se usa para volver a la vista inicial desde "Volver"/cerrar
   // Asegurar que el mapa conoce su tamaño real (en VISOR a pantalla completa se
   // crea antes del layout → sin esto fitBounds no fija zoom y no se ve nada).
   try{ map.invalidateSize(false); }catch(e){}
