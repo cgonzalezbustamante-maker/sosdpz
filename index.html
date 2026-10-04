@@ -50,6 +50,8 @@
   .leaflet-container{background:#faf3e0}
   #legend-map{position:absolute;top:18px;right:14px;background:#fff;border:2px solid #1a1a1a;border-radius:8px;padding:8px 10px;box-shadow:0 3px 8px #0005;z-index:1000;font-size:12px;font-weight:700;cursor:move;user-select:none;touch-action:none}
   #legend-map:hover{box-shadow:0 3px 12px #0007}
+  /* En el visor se baja la leyenda para que no la tape el buscador de municipios. */
+  body.visor #legend-map{position:fixed;top:calc(74px + env(safe-area-inset-top,0px));right:10px}
   #legend-map .titulo{cursor:move}
   #legend-map .titulo{font-size:12px;font-weight:900;color:var(--rojo);margin-bottom:8px;text-align:center;letter-spacing:.03em}
   #legend-map .fila{display:flex;align-items:center;gap:7px;margin:4px 0}
@@ -121,6 +123,7 @@
   .lbl-dl .lbl-parque{transform:translate(calc(-100% - 6px),6px)}   /* abajo-izquierda */
   .lbl-ur .lbl-parque{transform:translate(6px,calc(-100% - 6px))}   /* arriba-derecha */
   .lbl-ul .lbl-parque{transform:translate(calc(-100% - 6px),calc(-100% - 6px))} /* arriba-izquierda */
+  .lbl-ul0 .lbl-parque{transform:translate(-100%,-100%)}                        /* arriba-izq, ESQUINA inf-dcha tocando el punto */
   .lbl-up .lbl-parque{transform:translate(-50%,calc(-100% - 8px))}  /* arriba-centro */
   .lbl-dn .lbl-parque{transform:translate(-50%,8px)}                /* abajo-centro */
   .lbl-rt .lbl-parque{transform:translate(10px,-50%)}               /* a la derecha */
@@ -266,8 +269,13 @@
      navegador). Sin esto (100vh) el contenedor es más alto que lo visible y el
      panel inferior / la fecha quedan cortados por debajo. 100vh como fallback. */
   body.visor #map-wrap{flex:1;width:100vw;height:100vh;height:100dvh;min-height:100vh;min-height:100dvh}
+  /* Bloquear el scroll de página en el visor y fijar la altura real visible, para
+     que los elementos inferiores (aviso/fecha/panel) no queden fuera y haya que
+     hacer scroll. */
+  body.visor{overflow:hidden;overscroll-behavior:none}
+  body.visor #app{height:100vh;height:100dvh;overflow:hidden}
   /* Buscador de municipios del visor (arriba-centro) */
-  #visor-buscador{position:absolute;top:12px;left:50%;transform:translateX(-50%);z-index:1500;
+  #visor-buscador{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:1500;
     width:min(92vw,430px);display:none}
   body.visor #visor-buscador{display:block}
   #visor-buscador .vb-inp{width:100%;box-sizing:border-box;padding:11px 14px;border:2px solid var(--rojo);
@@ -282,23 +290,24 @@
   #visor-buscador .vb-item:last-child{border-bottom:none}
   #visor-buscador .vb-item:hover,#visor-buscador .vb-item.sel{background:#fbeeea}
   #visor-buscador .vb-item .vb-t{font-size:11px;font-weight:800;padding:1px 6px;border-radius:5px;color:#fff;white-space:nowrap}
-  /* Fecha de publicación (abajo-izquierda, respetando el área segura del móvil) */
-  #visor-fecha{position:absolute;bottom:calc(10px + env(safe-area-inset-bottom,0px));left:10px;z-index:1500;
+  /* Fecha de publicación (abajo-izquierda). position:fixed = pegada a la pantalla
+     visible aunque el navegador móvil tenga barra; subida y con área segura. */
+  #visor-fecha{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:10px;z-index:1500;
     background:#fff;border:2px solid var(--tinta);border-radius:9px;padding:7px 13px;font-size:14px;font-weight:800;
     color:#333;box-shadow:0 3px 9px #0006;display:none}
   body.visor #visor-fecha{display:block}
   #visor-fecha b{color:var(--rojo);font-size:15px}
-  /* Panel de aviso/mensaje del visor: ABAJO (donde hay más hueco), encima de la
-     fecha. Se muestra solo en la vista inicial; desaparece al enfocar un municipio. */
-  #visor-msg{position:absolute;bottom:calc(52px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);
+  /* Panel de aviso/mensaje del visor: ABAJO, SUBIDO y bien separado de la fecha.
+     Se muestra solo en la vista inicial; desaparece al enfocar un municipio. */
+  #visor-msg{position:fixed;bottom:calc(84px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);
     z-index:1550;width:min(94vw,440px);background:#fff;border:2px solid var(--rojo);border-radius:12px;
-    box-shadow:0 6px 18px #0008;overflow:hidden;display:none;max-height:46vh}
+    box-shadow:0 6px 18px #0008;overflow:hidden;display:none;max-height:40vh}
   #visor-msg .vm-cab{background:var(--rojo);color:#fff;font-weight:800;font-size:13px;
     letter-spacing:.02em;padding:6px 12px}
   #visor-msg .vm-txt{padding:10px 13px;font-size:14.5px;font-weight:600;color:var(--tinta);
-    line-height:1.4;white-space:pre-wrap;overflow-y:auto;max-height:calc(46vh - 34px)}
+    line-height:1.4;white-space:pre-wrap;overflow-y:auto;max-height:calc(40vh - 34px)}
   /* Botón "Volver" (solo en visor y con un municipio enfocado) */
-  #visor-volver{position:absolute;top:12px;left:12px;z-index:1600;background:var(--rojo);color:#fff;
+  #visor-volver{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));left:12px;z-index:1600;background:var(--rojo);color:#fff;
     border:2px solid #fff;border-radius:9px;padding:9px 15px;font-weight:800;font-size:14px;cursor:pointer;
     box-shadow:0 3px 9px #0007;display:none;align-items:center;gap:6px}
   #visor-volver:hover{background:var(--rojo-osc,#8f1218)}
@@ -614,7 +623,7 @@ function nombreCorto(p){ return NOMBRE_CORTO[p] || p; }
 // Dirección de la etiqueta respecto al punto del parque (clase CSS .lbl-xx).
 // Elegidas para que los parques cercanos no se pisen.
 const LBL_DIR = {
-  'Calatayud':'ur', 'La Almunia de Doña Godina':'up', 'Ejea de los Caballeros':'ur',
+  'Calatayud':'ul0', 'La Almunia de Doña Godina':'up', 'Ejea de los Caballeros':'ur',
   'Tarazona':'dr', 'El Burgo de Ebro':'ur', 'Tauste':'rt', 'Caspe':'ul', 'Daroca':'dl',
 };
 function renderParques(){
