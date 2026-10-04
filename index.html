@@ -104,11 +104,12 @@
   .totales b{color:var(--rojo)}
   .btn-reset{margin-top:10px;width:100%;padding:8px;background:var(--tinta);color:#fff;border:none;border-radius:5px;cursor:pointer;font-weight:700}
   .btn-reset:hover{background:var(--rojo)}
-  /* Etiquetas de parque en mapa */
-  .lbl-parque{background:rgba(255,255,255,.72);backdrop-filter:blur(2px);border:2px solid rgba(26,26,26,.9);border-radius:6px;padding:2px 5px;font-size:11px;font-weight:700;box-shadow:0 2px 5px #0004;text-align:center;line-height:1.15;white-space:nowrap;pointer-events:none}
-  .lbl-parque .p-nom{font-size:14.5px;color:var(--rojo);text-shadow:0 0 3px #fff;font-weight:900}
-  .lbl-parque .p-boms{font-size:17px;letter-spacing:1px;margin:0}
-  .lbl-parque .p-stat{font-size:12.5px;color:#111;text-shadow:0 0 3px #fff;font-weight:700}
+  /* Etiquetas de parque en mapa — minimalistas (nombre + dotación) */
+  .lbl-parque{background:rgba(255,255,255,.82);backdrop-filter:blur(1.5px);border:1.5px solid rgba(26,26,26,.85);border-radius:5px;padding:1px 6px;font-size:10px;font-weight:700;box-shadow:0 1px 4px #0003;text-align:center;line-height:1.12;white-space:nowrap;pointer-events:none}
+  .lbl-parque .p-nom{font-size:11px;color:var(--rojo);text-shadow:0 0 3px #fff;font-weight:900}
+  .lbl-parque .p-dot{font-size:11px;color:#111;text-shadow:0 0 3px #fff;font-weight:900;letter-spacing:.3px}
+  .lbl-parque .p-boms{font-size:13px;letter-spacing:1px;margin:0}
+  .lbl-parque .p-stat{font-size:10px;color:#111;text-shadow:0 0 3px #fff;font-weight:700}
   .lbl-parque .p-stat b{color:var(--tinta);font-weight:900}
   /* Parque cerrado: estilo cinta de precaución (hazard) — máxima visibilidad.
      Fondo amarillo con rayas negras diagonales + borde negro grueso.
@@ -128,7 +129,7 @@
     background:#000;
     color:#ffdd00;
     text-shadow:none;
-    padding:2px 8px;
+    padding:1px 7px;
     display:block;
     border-bottom:2px solid #ffdd00;
   }
@@ -136,9 +137,9 @@
     background:#000;
     color:#ffdd00 !important;
     font-weight:900;
-    font-size:14px;
-    letter-spacing:3px;
-    padding:3px 8px;
+    font-size:11px;
+    letter-spacing:2px;
+    padding:2px 7px;
     display:block;
   }
   .lbl-mun-name{background:transparent;border:none;color:#333;font-size:9px;font-weight:600;text-shadow:1px 1px 0 #fff,-1px -1px 0 #fff,1px -1px 0 #fff,-1px 1px 0 #fff;pointer-events:none}
@@ -265,10 +266,24 @@
   #visor-buscador .vb-item:hover,#visor-buscador .vb-item.sel{background:#fbeeea}
   #visor-buscador .vb-item .vb-t{font-size:11px;font-weight:800;padding:1px 6px;border-radius:5px;color:#fff;white-space:nowrap}
   /* Fecha de publicación (abajo-izquierda) */
-  #visor-fecha{position:absolute;bottom:10px;left:10px;z-index:1500;background:#fff;border:1.5px solid var(--tinta);
-    border-radius:7px;padding:5px 11px;font-size:11.5px;font-weight:700;color:#333;box-shadow:0 2px 7px #0006;display:none}
+  #visor-fecha{position:absolute;bottom:10px;left:10px;z-index:1500;background:#fff;border:2px solid var(--tinta);
+    border-radius:9px;padding:8px 15px;font-size:15.5px;font-weight:800;color:#333;box-shadow:0 3px 9px #0006;display:none}
   body.visor #visor-fecha{display:block}
-  #visor-fecha b{color:var(--rojo)}
+  #visor-fecha b{color:var(--rojo);font-size:16.5px}
+  /* Panel de aviso/mensaje del visor (debajo del buscador). Se muestra solo en
+     la vista inicial; desaparece al enfocar un municipio. */
+  #visor-msg{position:absolute;top:64px;left:50%;transform:translateX(-50%);z-index:1400;
+    width:min(92vw,430px);background:#fff;border:2px solid var(--rojo);border-radius:11px;
+    box-shadow:0 5px 16px #0007;overflow:hidden;display:none;max-height:42vh}
+  #visor-msg .vm-cab{background:var(--rojo);color:#fff;font-weight:800;font-size:13px;
+    letter-spacing:.02em;padding:6px 12px}
+  #visor-msg .vm-txt{padding:10px 13px;font-size:14.5px;font-weight:600;color:var(--tinta);
+    line-height:1.4;white-space:pre-wrap;overflow-y:auto;max-height:calc(42vh - 34px)}
+  /* Botón "Volver" (solo en visor y con un municipio enfocado) */
+  #visor-volver{position:absolute;top:12px;left:12px;z-index:1600;background:var(--rojo);color:#fff;
+    border:2px solid #fff;border-radius:9px;padding:9px 15px;font-weight:800;font-size:14px;cursor:pointer;
+    box-shadow:0 3px 9px #0007;display:none;align-items:center;gap:6px}
+  #visor-volver:hover{background:var(--rojo-osc,#8f1218)}
   /* ── Modal de PUBLICAR ── */
   #pub-ov{position:fixed;inset:0;z-index:3000;background:rgba(20,8,6,.6);display:none;align-items:center;
     justify-content:center;padding:16px}
@@ -281,6 +296,8 @@
   #pub-card .pub-qr img,#pub-card .pub-qr canvas{display:block}
   #pub-url{width:100%;box-sizing:border-box;padding:9px 11px;border:1.5px solid var(--tinta);border-radius:8px;
     font-size:12px;font-family:monospace;background:#fff;color:#333;word-break:break-all}
+  #pub-msg{width:100%;box-sizing:border-box;padding:9px 11px;border:1.5px solid var(--tinta);border-radius:8px;
+    font-size:13.5px;font-family:inherit;background:#fff;color:var(--tinta);resize:vertical;line-height:1.35}
   #pub-card .pub-btns{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
   #pub-card .pub-btns button{flex:1;min-width:120px;padding:10px;border-radius:9px;border:2px solid var(--tinta);
     background:#fff;color:var(--tinta);font-weight:800;font-size:13px;cursor:pointer}
@@ -319,6 +336,8 @@
       <input id="vb-inp" class="vb-inp" type="text" placeholder="🔍 Buscar municipio…" autocomplete="off" oninput="_buscarMun(this.value)" onfocus="_buscarMun(this.value)">
       <div id="vb-res" class="vb-res"></div>
     </div>
+    <div id="visor-msg"><div class="vm-cab">📢 Aviso</div><div class="vm-txt"></div></div>
+    <button id="visor-volver" onclick="limpiarFoco()" title="Volver a la vista inicial">← Volver</button>
     <div id="visor-fecha"></div>
     <div id="legend-map">
       <div class="titulo">TIEMPO DE LLEGADA</div>
@@ -339,8 +358,10 @@
     <div id="pub-status" style="font-size:12.5px;margin-bottom:8px;min-height:18px"></div>
     <div class="pub-qr" id="pub-qr"></div>
     <input id="pub-url" readonly onclick="this.select()">
+    <label for="pub-msg" style="display:block;font-size:12.5px;font-weight:800;color:var(--tinta);margin:10px 0 4px">📢 Mensaje para el visor <span style="font-weight:600;color:#888">(opcional)</span></label>
+    <textarea id="pub-msg" rows="3" placeholder="Escribe aquí un aviso para quien consulte el enlace. Déjalo vacío para no mostrar ninguno."></textarea>
     <div class="pub-btns">
-      <button class="prim" onclick="_hacerPublicar()">🔄 Volver a publicar</button>
+      <button class="prim" onclick="_hacerPublicar()">✅ Publicar ahora</button>
       <button onclick="_copiarPubUrl()">📋 Copiar enlace</button>
       <button onclick="_descargarQR()">⬇ Descargar QR</button>
     </div>
@@ -371,7 +392,7 @@ const VIEW_BASE='https://sosdpz.pages.dev/';
 const API_ESTADO='https://sosdpz.pages.dev/api/estado';
 // Orden FIJO de parques para serializar la dotación de forma compacta.
 const PARQUE_ORDER=['Tarazona','Calatayud','Ejea de los Caballeros','Caspe','La Almunia de Doña Godina','Tauste','Daroca','Cariñena','El Burgo de Ebro'];
-let VISOR=false, VISOR_FECHA_TXT=null;
+let VISOR=false, VISOR_FECHA_TXT=null, VISOR_MSG_TXT=null;
 (function(){
   const sp=new URLSearchParams(location.search);
   const host=location.hostname;
@@ -584,24 +605,25 @@ function renderParques(){
     // más grueso y radio mayor (para destacar sobre el mapa que ese parque
     // no atiende cobertura).
     L.circleMarker([pv.lat, pv.lon],{
-      radius:cerrado?12:10,
+      radius:cerrado?10:8,
       color:cerrado?'#ffdd00':'#1a1a1a',
       fillColor:cerrado?'#000':col,
       fillOpacity:1,
       weight:cerrado?4:2.5,
       interactive: modo==='isocronas'
     }).on('click', ()=>toggleZonaParque(p)).addTo(capaParques);
-    // Etiqueta flotante semitransparente: si cerrado, sólo nombre + sello CERRADO
-    // (no se muestran muns/km²/hab porque no atiende cobertura).
+    // Etiqueta MINIMALISTA: solo lo imprescindible para no solaparse en el mapa.
+    //  - Abierto: nombre + dotación (un bombero + nº de efectivos de guardia).
+    //  - Cerrado: nombre + sello CERRADO.
+    // El detalle de cobertura por parque (muns · km² · hab) vive en el panel
+    // lateral (renderPanel), no en la etiqueta del mapa.
     let cuerpo;
     if(cerrado){
       cuerpo = '<div class="p-nom">'+p+'</div>'+
                '<div class="p-boms">CERRADO</div>';
     } else {
       cuerpo = '<div class="p-nom">'+p+'</div>'+
-               '<div class="p-boms">'+'🧑‍🚒'.repeat(Math.min(n,10))+'</div>'+
-               '<div class="p-stat"><b>'+numMuns+'</b> muns · <b>'+sup.toFixed(0)+'</b> km²</div>'+
-               '<div class="p-stat"><b>'+pob.toLocaleString('es-ES')+'</b> hab</div>';
+               '<div class="p-dot">🧑‍🚒 '+n+'</div>';
     }
     // Anchor específico por parque (esquina del icono que coincide con el
     // punto real del parque). Por defecto va la esquina sup-izq desplazada
@@ -742,10 +764,20 @@ function renderPeorCubiertos(){
 function focoMun(mun, empresa){
   const mv = DATOS.muns[mun];
   if(!mv || !mv.parques || !mv.parques.length){ return; }
+  // Si ya había un municipio enfocado (p. ej. se busca otro con el panel abierto),
+  // limpiar su estado previo ANTES de dibujar el nuevo: evita que el popup/línea
+  // o la proyección arrastren posiciones del foco anterior.
+  _focoCfg = null; _focoLineaHalo = _focoLineaBody = _focoPunto = null; _focoPopup = null; _focoDrag = null;
+  if(map.dragging && !map.dragging.enabled()) map.dragging.enable();
+  map.closePopup();
   _munEnfocado = mun;
-  // En el visor: ocultar el buscador mientras se muestra el panel del municipio
-  // (para que no se solapen arriba). Se restaura al cerrar (limpiarFoco).
-  if(VISOR){ const _vb=document.getElementById('visor-buscador'); if(_vb) _vb.style.display='none'; }
+  // En el visor: ocultar buscador y panel de mensaje mientras se ve el municipio,
+  // y mostrar el botón "Volver". Todo se restaura al cerrar (limpiarFoco).
+  if(VISOR){
+    const _vb=document.getElementById('visor-buscador'); if(_vb) _vb.style.display='none';
+    const _vm=document.getElementById('visor-msg'); if(_vm) _vm.style.display='none';
+    const _bv=document.getElementById('visor-volver'); if(_bv) _bv.style.display='flex';
+  }
   capaFoco.clearLayers();
 
   // 1) Contorno del mun: tres capas superpuestas:
@@ -835,58 +867,91 @@ function focoMun(mun, empresa){
     const pv = DATOS.parques[f.p];
     if(pv) puntosMapa.push([pv.lat, pv.lon]);
   });
-  if(puntosMapa.length>1){
-    map.fitBounds(L.latLngBounds(puntosMapa).pad(0.35), {maxZoom:11, animate:false});
-  }
 
-  // 6) Colocar el popup en el ÁNGULO MÁS GRANDE formado entre las líneas
-  //    mun→parque (para no cruzarse jamás con ninguna). Si hay N parques,
-  //    dividen el círculo en N sectores; se elige el bisector del sector
-  //    mayor. Si hay 1 parque, se coloca en el sentido opuesto (sector 360°).
   const popW = 260;
   const popH = 55 + filas.length*32 + 32 + (empresa?30:0);  // cab + filas + cerrar (+ banda empresa)
-  const OFF_RADIUS = 130;                  // distancia centro-popup ↔ centro-mun (px)
-  const cxPt = map.latLngToContainerPoint(centro);
-  // Bearings (radianes) de cada parque desde el mun, en coordenadas de pantalla
-  // (y crece hacia abajo; atan2 devuelve entre -π y +π).
-  const bearings = filas.map(f=>{
-    const pv = DATOS.parques[f.p]; if(!pv) return null;
-    const pp = map.latLngToContainerPoint([pv.lat, pv.lon]);
-    return Math.atan2(pp.y - cxPt.y, pp.x - cxPt.x);
-  }).filter(b=>b!==null).sort((a,b)=>a-b);
-  let bestMid;
-  if(bearings.length === 1){
-    // Popup en dirección opuesta al único parque
-    bestMid = bearings[0] + Math.PI;
+  // Asegura un tamaño de contenedor actualizado antes de encuadrar/posicionar
+  // (evita usar una altura obsoleta justo tras recargar o rotar el móvil).
+  try{ map.invalidateSize(false); }catch(e){}
+  const _sz = map.getSize();
+  const esMovil = _sz.x <= 768;
+  let cfg;
+
+  if(esMovil){
+    // ── MÓVIL ──────────────────────────────────────────────────────────────
+    // El panel se ACOPLA abajo-centro y queda SIEMPRE completo en pantalla.
+    // El encuadre reserva esa franja inferior (para el panel) y un hueco arriba
+    // (buscador/leyenda), de modo que el municipio y SUS parques relevantes
+    // —el/los cerrados que daban cobertura inicial y el que da la final— caen
+    // en la banda libre superior y sus etiquetas quedan visibles.
+    const MARG = 10;                       // margen al borde inferior
+    const topRes = VISOR ? 64 : 92;        // hueco superior (buscador/leyenda/zoom)
+    const botRes = popH + MARG + 44;       // franja inferior reservada al panel (+ aire para la etiqueta del parque más cercano)
+    let fb = L.latLngBounds(puntosMapa);
+    if(puntosMapa.length === 1) fb = fb.pad(0.5);
+    map.fitBounds(fb, {
+      paddingTopLeft:     L.point(24, topRes),
+      paddingBottomRight: L.point(24, botRes),
+      maxZoom:12, animate:false
+    });
+    const munPt = map.latLngToContainerPoint(centro);
+    // Popup anclado por su borde inferior-centro: lo centramos en horizontal
+    // y pegamos su base al borde inferior con margen.
+    const offX = _sz.x/2 - munPt.x;
+    const offY = (_sz.y - MARG) - munPt.y;
+    // dirBack: del centro del popup hacia el mun (primer trazo de la línea).
+    const cpx = munPt.x + offX, cpy = munPt.y + offY - popH/2;
+    let bx = munPt.x - cpx, by = munPt.y - cpy; const bl = Math.hypot(bx,by)||1;
+    cfg = { off: L.point(offX, offY), dirBack:{x:bx/bl, y:by/bl}, popW, popH };
   } else {
-    let bestGap = 0;
-    for(let i=0; i<bearings.length; i++){
-      const cur = bearings[i];
-      const nxt = bearings[(i+1) % bearings.length];
-      let gap = nxt - cur;
-      if(i === bearings.length-1) gap += 2*Math.PI; // wrap-around
-      if(gap > bestGap){
-        bestGap = gap;
-        bestMid = cur + gap/2;
+    // ── ESCRITORIO ─────────────────────────────────────────────────────────
+    // Encuadre simétrico + popup en el ÁNGULO MÁS GRANDE entre las líneas
+    // mun→parque (para no cruzarse jamás con ninguna). Con N parques el círculo
+    // se divide en N sectores y se elige el bisector del sector mayor; con 0-1
+    // parques, el sentido opuesto al único (sector 360°).
+    if(puntosMapa.length>1){
+      map.fitBounds(L.latLngBounds(puntosMapa).pad(0.35), {maxZoom:11, animate:false});
+    }
+    const OFF_RADIUS = 130;                 // distancia centro-popup ↔ centro-mun (px)
+    const munPt = map.latLngToContainerPoint(centro);
+    // Bearings (radianes) de cada parque desde el mun, en coords de pantalla
+    // (y crece hacia abajo; atan2 devuelve entre -π y +π).
+    const bearings = filas.map(f=>{
+      const pv = DATOS.parques[f.p]; if(!pv) return null;
+      const pp = map.latLngToContainerPoint([pv.lat, pv.lon]);
+      return Math.atan2(pp.y - munPt.y, pp.x - munPt.x);
+    }).filter(b=>b!==null).sort((a,b)=>a-b);
+    let bestMid;
+    if(bearings.length <= 1){
+      // Popup en dirección opuesta al único parque (o hacia arriba si no hay).
+      bestMid = (bearings.length ? bearings[0] : 0) + Math.PI;
+    } else {
+      let bestGap = 0;
+      for(let i=0; i<bearings.length; i++){
+        const cur = bearings[i];
+        const nxt = bearings[(i+1) % bearings.length];
+        let gap = nxt - cur;
+        if(i === bearings.length-1) gap += 2*Math.PI; // wrap-around
+        if(gap > bestGap){
+          bestGap = gap;
+          bestMid = cur + gap/2;
+        }
       }
     }
+    // Normalizar a [-π, π]
+    while(bestMid >  Math.PI) bestMid -= 2*Math.PI;
+    while(bestMid < -Math.PI) bestMid += 2*Math.PI;
+    const dirVec = {x: Math.cos(bestMid), y: Math.sin(bestMid)};
+    // Ancla del popup = latLng+offset (Leaflet). Con ancla default (bottom-center)
+    // el popup se despliega hacia arriba; para centrarlo en (offX, offY) hay que
+    // desplazar el ancla popH/2 hacia abajo desde el centro geométrico deseado.
+    cfg = {
+      off: L.point(dirVec.x*OFF_RADIUS, dirVec.y*OFF_RADIUS + popH/2),
+      dirBack: {x:-dirVec.x, y:-dirVec.y},
+      popW, popH,
+    };
   }
-  // Normalizar a [-π, π]
-  while(bestMid >  Math.PI) bestMid -= 2*Math.PI;
-  while(bestMid < -Math.PI) bestMid += 2*Math.PI;
-  const dirVec = {x: Math.cos(bestMid), y: Math.sin(bestMid)};
-  const offX = dirVec.x * OFF_RADIUS;
-  const offY = dirVec.y * OFF_RADIUS;
-  // Ancla del popup = latLng+offset (Leaflet). Con ancla default (bottom-center)
-  // el popup se despliega hacia arriba; para centrarlo en (offX, offY) hay que
-  // desplazar el ancla popH/2 hacia abajo desde el centro geométrico deseado.
-  const cfg = {
-    off: L.point(offX, offY + popH/2),
-    // Vector desde el CENTRO del popup hacia el mun (para calcular el punto
-    // de unión en el centro del lado más cercano).
-    dirBack: {x:-dirVec.x, y:-dirVec.y},
-    popW, popH,
-  };
+  const cxPt = map.latLngToContainerPoint(centro);
   // Punto de unión: centro del LADO del popup más cercano al mun, calculado
   // según el eje dominante del vector popup→mun.
   function calcExt(cfg, cxPt){
@@ -917,7 +982,10 @@ function focoMun(mun, empresa){
   _focoLineaBody = L.polyline([centro, extLL],{color:'#5c3a0e', weight:4, opacity:1,    interactive:false, lineCap:'round'}).addTo(capaFoco);
   _focoPunto     = L.circleMarker(extLL,{radius:6, color:'#c9a24b', fillColor:'#5c3a0e', fillOpacity:1, weight:2.5, interactive:false}).addTo(capaFoco);
   // Popup con offset. Anclado por su borde inferior-centro (default).
-  _focoPopup = L.popup({maxWidth:370, minWidth:230, autoPan:false, closeButton:false, className:'foco-popup-wrap', offset:cfg.off})
+  // En móvil se limita el ancho al del contenedor (con margen) para que nunca
+  // roce los bordes laterales.
+  const _maxW = esMovil ? Math.min(360, _sz.x - 16) : 370;
+  _focoPopup = L.popup({maxWidth:_maxW, minWidth:230, autoPan:false, closeButton:false, className:'foco-popup-wrap', offset:cfg.off})
     .setLatLng(centro).setContent(html).openOn(map);
   // Activar drag sobre la cabecera del popup: al soltar, la línea de unión
   // se recalcula al nuevo lado más cercano del popup.
@@ -945,8 +1013,12 @@ function focoMun(mun, empresa){
 
 function limpiarFoco(){
   _munEnfocado = null;
-  // Restaurar el buscador del visor al cerrar el panel del municipio.
-  if(VISOR){ const _vb=document.getElementById('visor-buscador'); if(_vb){ _vb.style.display=''; const _i=document.getElementById('vb-inp'); if(_i) _i.value=''; } }
+  // Restaurar buscador + mensaje y ocultar "Volver" al cerrar el panel del municipio.
+  if(VISOR){
+    const _vb=document.getElementById('visor-buscador'); if(_vb){ _vb.style.display=''; const _i=document.getElementById('vb-inp'); if(_i) _i.value=''; }
+    const _bv=document.getElementById('visor-volver'); if(_bv) _bv.style.display='none';
+    _aplicarVisorMsg();
+  }
   _focoCfg = null;
   _focoLineaHalo = _focoLineaBody = _focoPunto = null;
   _focoPopup = null;
@@ -1481,12 +1553,19 @@ function _renderQR(url){
     else{ cont.innerHTML='<div style="font-size:12px;color:#c0392b">No se pudo cargar el generador de QR.</div>'; }
   }catch(e){ cont.innerHTML='<div style="font-size:12px;color:#c0392b">QR no disponible: '+e.message+'</div>'; }
 }
-// Abre el modal (enlace FIJO + QR) y publica el estado actual.
+// Abre el modal (enlace FIJO + QR). NO publica automáticamente: el gestor revisa
+// el mensaje (precargado con el actual) y pulsa «Publicar ahora».
 async function publicar(){
   document.getElementById('pub-url').value=VIEW_BASE;
   _renderQR(VIEW_BASE);
   document.getElementById('pub-ov').classList.add('on');
-  await _hacerPublicar();
+  const st=document.getElementById('pub-status');
+  if(st) st.innerHTML='Revisa el mensaje (opcional) y pulsa <b>«✅ Publicar ahora»</b>.';
+  // Precargar el mensaje actualmente publicado para poder mantenerlo o editarlo.
+  try{
+    const r=await fetch(API_ESTADO,{cache:'no-store'});
+    if(r.ok){ const j=await r.json(); const t=document.getElementById('pub-msg'); if(t && j && typeof j.m==='string') t.value=j.m; }
+  }catch(e){}
 }
 async function _hacerPublicar(){
   const st=document.getElementById('pub-status');
@@ -1497,13 +1576,15 @@ async function _hacerPublicar(){
     try{ localStorage.setItem('sosdpz_pubkey',key); }catch(e){}
   }
   if(st) st.innerHTML='⏳ Publicando…';
-  const payload={ b:PARQUE_ORDER.map(p=>bomberos[p]||0), d:_hoyISO() };
+  const _msg=(document.getElementById('pub-msg')||{}).value||'';
+  const payload={ b:PARQUE_ORDER.map(p=>bomberos[p]||0), d:_hoyISO(), m:_msg.trim().slice(0,600) };
   try{
     const r=await fetch(API_ESTADO,{method:'POST',headers:{'Content-Type':'application/json','X-Pub-Key':key},body:JSON.stringify(payload)});
     if(r.status===403){ try{localStorage.removeItem('sosdpz_pubkey');}catch(e){} if(st) st.innerHTML='<span style="color:#c0392b">❌ Clave incorrecta. Vuelve a pulsar «Publicar ahora» e introdúcela de nuevo.</span>'; return; }
     if(!r.ok){ if(st) st.innerHTML='<span style="color:#c0392b">❌ Error al publicar ('+r.status+').</span>'; return; }
     await r.json();
-    if(st) st.innerHTML='<span style="color:#1e7a33;font-weight:800">✓ Publicado el '+_fmtFecha(payload.d)+'. Este enlace ya muestra el estado actual.</span>';
+    const _avi = payload.m ? ' Con aviso.' : ' Sin aviso.';
+    if(st) st.innerHTML='<span style="color:#1e7a33;font-weight:800">✓ Publicado el '+_fmtFecha(payload.d)+'.'+_avi+' Este enlace ya muestra el estado actual.</span>';
   }catch(e){ if(st) st.innerHTML='<span style="color:#c0392b">❌ Error de red: '+e.message+'</span>'; }
 }
 function _cerrarPublicar(){ document.getElementById('pub-ov').classList.remove('on'); }
@@ -1561,6 +1642,7 @@ async function _cargarEstadoPublicado(){
       if(j && Array.isArray(j.b) && j.b.length===PARQUE_ORDER.length){
         const b={}; PARQUE_ORDER.forEach((p,i)=>{ b[p]=Math.max(0,parseInt(j.b[i],10)||0); }); bomberos=b;
         if(j.d) VISOR_FECHA_TXT=_fmtFecha(j.d);
+        VISOR_MSG_TXT = (j && typeof j.m==='string') ? j.m.trim() : '';
       }
     }
   }catch(e){ console.warn('[VISOR] no se pudo cargar el estado publicado',e); }
@@ -1568,6 +1650,14 @@ async function _cargarEstadoPublicado(){
 function _aplicarVisorFecha(){
   const f=document.getElementById('visor-fecha');
   if(f) f.innerHTML = VISOR_FECHA_TXT ? ('Publicado el <b>'+VISOR_FECHA_TXT+'</b>') : 'SOSDPZ · cobertura';
+}
+// Muestra el panel de mensaje solo en el visor, si hay mensaje y no hay un
+// municipio enfocado (al buscar/enfocar uno, el mensaje desaparece).
+function _aplicarVisorMsg(){
+  const el=document.getElementById('visor-msg'); if(!el) return;
+  const hay = VISOR && VISOR_MSG_TXT && !_munEnfocado;
+  if(hay){ el.querySelector('.vm-txt').textContent = VISOR_MSG_TXT; el.style.display='block'; }
+  else { el.style.display='none'; }
 }
 
 fetch('datos_operativos.json',{cache:'no-store'}).then(r=>r.json()).then(async (d)=>{
@@ -1590,6 +1680,7 @@ fetch('datos_operativos.json',{cache:'no-store'}).then(r=>r.json()).then(async (
   initDragLeyenda();
   if(VISOR){
     _aplicarVisorFecha();
+    _aplicarVisorMsg();
     // Re-ajustar tras el layout definitivo (por si el contenedor cambió de tamaño).
     setTimeout(()=>{ try{ map.invalidateSize(false); if(b.isValid()) map.fitBounds(b,{padding:[14,14]}); }catch(e){} }, 200);
   } else if(window.innerWidth<=768){

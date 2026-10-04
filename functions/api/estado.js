@@ -45,6 +45,7 @@ export async function onRequestPost(context) {
   const estado = {
     b: body.b.map(x => Math.max(0, Math.min(30, parseInt(x, 10) || 0))),
     d: String(body.d || '').slice(0, 10),
+    m: String(body.m || '').slice(0, 600),   // mensaje opcional para el visor
     ts: Date.now(),
   };
   await context.env.ESTADO.put('actual', JSON.stringify(estado));
