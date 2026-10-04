@@ -1727,7 +1727,7 @@ function _posicionarVisorMsg(){
     const sb = _vistaInicial ? map.latLngToContainerPoint([_vistaInicial.getSouth(), _vistaInicial.getCenter().lng]).y : sz.y*0.6;
     const fechaEl=document.getElementById('visor-fecha');
     const fechaTop = fechaEl ? fechaEl.getBoundingClientRect().top : (sz.y - 60);
-    const top = Math.round(Math.min(Math.max(sb + 14, sz.y*0.40), sz.y*0.72));
+    const top = Math.round(Math.min(Math.max(sb + 24, sz.y*0.40), sz.y*0.72));
     const maxH = Math.max(56, Math.round(fechaTop - 14 - top));
     el.style.top = top+'px';
     el.style.bottom = 'auto';
